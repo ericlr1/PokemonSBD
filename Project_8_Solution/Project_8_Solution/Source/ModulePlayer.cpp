@@ -58,24 +58,24 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 
 
 
-	rightAnim.PushBack({ 21, 84, 21, 28 });
-	rightAnim.PushBack({ 0, 84, 21, 28 });
-	rightAnim.PushBack({ 21, 84, 21, 28 });
-	rightAnim.PushBack({ 42, 84, 21, 28 });
+	rightAnim.PushBack({ 21, 81, 21, 28 });
+	rightAnim.PushBack({ 0, 81, 21, 28 });
+	rightAnim.PushBack({ 21, 81, 21, 28 });
+	rightAnim.PushBack({ 42, 81, 21, 28 });
 	rightAnim.speed = 0.07f;
 	rightAnim.loop = true;
-	idlerightAnim.PushBack({ 21, 84, 21, 28 });
+	idlerightAnim.PushBack({ 21, 81, 21, 28 });
 	idlerightAnim.speed = 0.05f;
 	idlerightAnim.loop = true;
 
 
-	upAnim.PushBack({ 21, 56, 21, 28 });
-	upAnim.PushBack({ 0, 56, 21, 28 });
-	upAnim.PushBack({ 21, 56, 21, 28 });
-	upAnim.PushBack({ 42, 56, 21, 28 });
+	upAnim.PushBack({ 21, 53, 21, 28 });
+	upAnim.PushBack({ 0, 53, 21, 28 });
+	upAnim.PushBack({ 21, 53, 21, 28 });
+	upAnim.PushBack({ 42, 53, 21, 28 });
 	upAnim.speed = 0.07f;
 	upAnim.loop = true;
-	idleupAnim.PushBack({ 21, 56, 21, 28 });
+	idleupAnim.PushBack({ 21, 53, 21, 28 });
 	idleupAnim.speed = 0.05f;
 	idleupAnim.loop = true;
 
