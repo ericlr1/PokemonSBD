@@ -214,129 +214,6 @@ bool SceneLevel1::Start()
 	//App->enemies->AddEnemy(Enemy_Type::GREENSOLDIER, 640, 210);
 
 
-	//
-
-
-
-	////Destruibles Horizontal
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 129, 2936);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 158, 2936);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 239, 2936);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 268, 2936);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 279, 2580);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 311, 2580);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 118, 2523);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 149, 2523);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 178, 2523);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 409, 2100);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 438, 2100);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 229, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 258, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 287, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 316, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 345, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 374, 1769);	
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 533, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 562, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 591, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 620, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 649, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 678, 1769);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 400, 1259);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 429, 1259);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 458, 1259);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 480, 1177);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 509, 1177);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 538, 1177);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 567, 1177);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 596, 1177);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 625, 1177);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 600, 895);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 629, 895);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 658, 895);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 735, 895);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 764, 895);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 793, 895);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 600, 462);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 629, 462);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 658, 462);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 735, 462);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 764, 462);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 571, 492);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 658, 492);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_H, 735, 492);
-
-	////Destruible Vertical
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_V, 450, 2050);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_V, 490, 1238);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_V, 490, 1238);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_V, 650, 1125);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_V, 650, 1154);
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_V, 571, 420);	
-	//App->destruibles->AddDestruible(Destruible_Type::BARRICADA_V, 571, 450);
-
-	////Destructible Espinas
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 425, 2000);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 455, 2000);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 300, 1666);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 328, 1666);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 356, 1666);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 384, 1666);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 574, 1666);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 546, 1666);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 518, 1666);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 490, 1666);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 328, 1600);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 546, 1600);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 378, 1572);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 406, 1572);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 406, 1546);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 434, 1572);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 300, 1458);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 300, 1430);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 328, 1458);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 328, 1430);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 328, 1430);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 546, 1300);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 574, 1300);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 546, 890);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 546, 890);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 574, 890);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 574, 862);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 602, 862);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 630, 862);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 658, 862);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 750, 862);
-	//App->destruibles->AddDestruible(Destruible_Type::ESPINAS, 778, 862);
-
-
-	////Wall
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 212, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 264, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 316, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 368, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 420, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 472, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 524, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 576, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 628, 1694);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 680, 1694);
-	//
-	//
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 212, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 264, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 316, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 368, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 420, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 472, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 524, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 576, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 628, 1371);
-	//App->destruibles->AddDestruible(Destruible_Type::WALL, 680, 1371);
-
-	//// TODO 2: Enable (and properly disable) the player module
-	//
-
 	////Collider de victoria 
 	//App->collisions->AddCollider({682, 124, 62, 5}, Collider::Type::WIN);
 
@@ -576,8 +453,13 @@ bool SceneLevel1::Start()
 	//App->collisions->AddCollider({ 628, 403, 3, 40 }, Collider::Type::RESET_ANIM_TRENCH);
 	//App->collisions->AddCollider({ 760, 403, 3, 40 }, Collider::Type::RESET_ANIM_TRENCH);
 	
-	//Armas
-	raligun_colldier= App->collisions->AddCollider({ 214, 3106, 32,28 }, Collider::Type::RALIGUN);
+	//Colliders
+	App->collisions->AddCollider({0, 0, 27, 300}, Collider::Type::WALL);
+	App->collisions->AddCollider({0, 300, 125, 100}, Collider::Type::WALL);
+	App->collisions->AddCollider({312, 350, 120, 50}, Collider::Type::WALL);
+
+
+
 	return ret;
 }
 
