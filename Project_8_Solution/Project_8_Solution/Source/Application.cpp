@@ -19,6 +19,7 @@
 #include "ModuleUI.h"
 #include "ModuleDestruibles.h"
 #include "ScenePrevTitle.h"
+#include "SceneRuta1.h"
 
 
 
@@ -42,16 +43,17 @@ Application::Application()
 	modules[9] =	sceneLose =		new SceneLose(false);
 	modules[10] =	sceneLogo =		new SceneLogo(true);
 	modules[11] =	scenePrevTitle =new ScenePrevTitle(false);
-	modules[12] =   enemies =       new ModuleEnemies(false);	//Player starts disabled
+	modules[12] =	sceneRuta1 =	new SceneRuta1(false);
+	modules[13] =   enemies =       new ModuleEnemies(false);	//Player starts disabled
 	
-	modules[13] =	particles =		new ModuleParticles(true);
+	modules[14] =	particles =		new ModuleParticles(true);
 
-	modules[14] =   player =        new ModulePlayer(false);
+	modules[15] =   player =        new ModulePlayer(false);
 	
-	modules[15] =	fade =			new ModuleFadeToBlack(true);
-	modules[16] =	fonts =			new ModuleFonts(true);
+	modules[16] =	fade =			new ModuleFadeToBlack(true);
+	modules[17] =	fonts =			new ModuleFonts(true);
 
-	modules[17] =	render =		new ModuleRender(true);
+	modules[18] =	render =		new ModuleRender(true);
 
 }
 
