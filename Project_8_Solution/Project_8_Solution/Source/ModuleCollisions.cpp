@@ -495,6 +495,29 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::RESPAWN_5][Collider::Type::RESPAWN_4] = false;
 	matrix[Collider::Type::RESPAWN_5][Collider::Type::RESPAWN_5] = false;
 
+	matrix[Collider::Type::TORUTA1][Collider::Type::WALL] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::BODY] = true;
+	matrix[Collider::Type::TORUTA1][Collider::Type::FOOT] = true;
+	matrix[Collider::Type::TORUTA1][Collider::Type::ENEMY] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::PLAYER_SHOT] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::ENEMY_SHOT] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::WATER] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::TRENCH] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::HOSTAGE] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RALIGUN] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RALIGUN_SHOOT] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::EXPLOSION] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::DESTRUIBLE] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RESET_ANIM_TRENCH] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RESET_ANIM_WATER] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::WIN] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RESPAWN_1] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RESPAWN_2] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RESPAWN_3] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RESPAWN_4] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::RESPAWN_5] = false;
+	matrix[Collider::Type::TORUTA1][Collider::Type::TORUTA1] = false;
+
 }
 
 // Destructor
@@ -660,6 +683,14 @@ void ModuleCollisions::DebugDraw()
 			break;
 
 			case Collider::Type::RESET_ANIM_TRENCH: // Lime
+			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha);
+			break;
+
+			case Collider::Type::TORUTA1: 
+			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha);
+			break;
+
+			case Collider::Type::TOPALLETTOWN: 
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha);
 			break;
 		}

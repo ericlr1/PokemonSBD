@@ -31,6 +31,8 @@ struct Collider
 		RESPAWN_3,
 		RESPAWN_4,
 		RESPAWN_5,
+		TORUTA1,
+		TOPALLETTOWN,
 		
 	
 

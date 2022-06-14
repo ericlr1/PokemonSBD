@@ -508,6 +508,14 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		}
 
 	}
+
+	if (c1->type == Collider::Type::FOOT && c2->type == Collider::Type::TORUTA1)
+	{
+		immovable = true;
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneRuta1, 30);
+		position.x = 200;
+		position.y = 610;
+	}
 	
 }
 

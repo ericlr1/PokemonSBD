@@ -143,11 +143,13 @@
     <ClInclude Include="Espinas.h">
       <Filter>Source Files\Entities\Destruibles</Filter>
     </ClInclude>
-    <ClInclude Include="ScenePrevTitle.h" />
     <ClInclude Include="Destruible_Wall.h">
       <Filter>Source Files\Entities\Destruibles</Filter>
     </ClInclude>
     <ClInclude Include="SceneRuta1.h">
+      <Filter>Source Files\Modules\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenePrevTitle.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
   </ItemGroup>
@@ -260,13 +262,13 @@
     <ClCompile Include="Destruible_Espinas.cpp">
       <Filter>Source Files\Entities\Destruibles</Filter>
     </ClCompile>
-    <ClCompile Include="ScenePrevTitle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Destruible_Wall.cpp">
       <Filter>Source Files\Entities\Destruibles</Filter>
     </ClCompile>
     <ClCompile Include="SceneRuta1.cpp">
+      <Filter>Source Files\Modules\Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePrevTitle.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClCompile>
   </ItemGroup>

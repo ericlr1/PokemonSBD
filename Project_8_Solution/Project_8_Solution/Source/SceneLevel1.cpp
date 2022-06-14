@@ -453,7 +453,11 @@ bool SceneLevel1::Start()
 	//App->collisions->AddCollider({ 628, 403, 3, 40 }, Collider::Type::RESET_ANIM_TRENCH);
 	//App->collisions->AddCollider({ 760, 403, 3, 40 }, Collider::Type::RESET_ANIM_TRENCH);
 	
-	//Colliders
+	
+	//Collider salida a Ruta 1
+	App->collisions->AddCollider({ 187, 0, 57, 10 }, Collider::Type::TORUTA1);
+
+	//Colliders muros
 	App->collisions->AddCollider({0, 0, 30, 300}, Collider::Type::WALL);
 	App->collisions->AddCollider({0, 300, 125, 100}, Collider::Type::WALL);
 	App->collisions->AddCollider({305, 355, 10, 40}, Collider::Type::WALL);
