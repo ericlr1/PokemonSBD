@@ -27,7 +27,7 @@ bool SceneLogo::Start()
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load("Assets/Sprites/pantllacarga.png");
+	bgTexture = App->textures->Load("Assets/Sprites/capybara.png");
 
 	return ret;
 }
@@ -55,7 +55,7 @@ Update_Status SceneLogo::Update()
 Update_Status SceneLogo::PostUpdate()
 {
 	// Draw everything --------------------------------------
-	App->render->Blit(bgTexture, 150, 0, NULL);
+	App->render->Blit(bgTexture, 0, 0, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }

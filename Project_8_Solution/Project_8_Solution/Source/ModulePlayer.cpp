@@ -29,18 +29,18 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
 	//Animaciones start
 
-	upAnim.PushBack({21, 0, 21, 28});
-	upAnim.PushBack({0, 0, 21, 28});
-	upAnim.PushBack({21, 0, 21, 28});
-	upAnim.PushBack({42, 0, 21, 28});
+	downAnim.PushBack({21, 0, 21, 28});
+	downAnim.PushBack({0, 0, 21, 28});
+	downAnim.PushBack({21, 0, 21, 28});
+	downAnim.PushBack({42, 0, 21, 28});
 
-	upAnim.speed = 0.05f;
-	upAnim.loop = true;
+	downAnim.speed = 0.07f;
+	downAnim.loop = true;
 
 
-	idleupAnim.PushBack({ 21, 0, 21, 28 });
-	idleupAnim.speed = 0.05f;
-	idleupAnim.loop = true;
+	idledownAnim.PushBack({ 21, 0, 21, 28 });
+	idledownAnim.speed = 0.05f;
+	idledownAnim.loop = true;
 
 
 }
@@ -58,7 +58,7 @@ bool ModulePlayer::Start()
 	
 	//Load the textures
 	App->UI->iconoVida = App->textures->Load("Assets/Sprites/UI _Vidas.png"); //Icono vida
-	texture = App->textures->Load("Assets/Sprites/Sprites male (Faltan cuadrar algunos).png"); //Icono vida
+	texture = App->textures->Load("Assets/Sprites/Sprites male.png"); //Icono vida
 
 
 	// Initiate player audios here
@@ -120,12 +120,6 @@ Update_Status ModulePlayer::Update()
 		{
 			button_press = true; break;
 		}
-	}
-
-	
-	if (App->input->keys[SDL_SCANCODE_P] == Key_State::KEY_DOWN)
-	{
-		facing = 0;
 	}
 	
 	if (App->input->keys[SDL_SCANCODE_ESCAPE] == Key_State::KEY_DOWN)
@@ -224,375 +218,69 @@ Update_Status ModulePlayer::Update()
 		|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) < 0 && immovable == false)
 	{
 		position.x -= speed;
-		
-		switch (facing)
+		facing = 4;
+
+
+
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && immovable == false
+			|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) > 0 && immovable == false)
 		{
-		case 0:
-			if (currentAnimation != &upAnim)
-			{
-				upAnim.Reset();
-				upfootAnim.Reset();
-				currentAnimation = &upAnim;
-			}
+			position.x += speed;
+			facing = 2;
 
-			break;
-		case 1:
-			if (currentAnimation != &rightupAnim)
-			{
-				rightupAnim.Reset();
-				rightupfootAnim.Reset();
-				currentAnimation = &rightupAnim;
-			}
-			break;
-
-		case 2:
-			if (currentAnimation != &rightAnim)
-			{
-				rightAnim.Reset();
-				rightfootAnim.Reset();
-				currentAnimation = &rightAnim;
-				
-			}
-			break;
-
-		case 3:
-			if (currentAnimation != &rightdownAnim)
-			{
-				rightdownAnim.Reset();
-				rightdownfootAnim.Reset();
-				currentAnimation = &rightdownAnim;
-				
-			}
-			break;
-
-		case 4:
-			if (currentAnimation != &downAnim)
-			{
-				downAnim.Reset();
-				downfootAnim.Reset();
-				currentAnimation = &downAnim;
-				
-			}
-			break;
-
-		case 5:
-			if (currentAnimation != &leftdownAnim)
-			{
-				leftdownAnim.Reset();
-				leftdownfootAnim.Reset();
-				currentAnimation = &leftdownAnim;
-				
-			}
-			break;
-
-		case 6:
-			if (currentAnimation != &leftAnim)
-			{
-				leftAnim.Reset();
-				leftfootAnim.Reset();
-				currentAnimation = &leftAnim;
-				
-			}
-			break;
-
-		case 7:
-			if (currentAnimation != &leftupAnim)
-			{
-				leftupAnim.Reset();
-				leftupfootAnim.Reset();
-				currentAnimation = &leftupAnim;
-				
-			}
-			break;
-		}
-	}
-	
-
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && immovable == false
-		|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) > 0 && immovable == false)
-	{
-		position.x += speed;
-		
-		switch (facing)
-		{
-		case 0:
-			if (currentAnimation != &upAnim)
-			{
-				upAnim.Reset();
-				upfootAnim.Reset();
-				currentAnimation = &upAnim;
-				
-			}
-			break;
-
-		case 1:
-			if (currentAnimation != &rightupAnim)
-			{
-				rightupAnim.Reset();
-				rightupfootAnim.Reset();
-				currentAnimation = &rightupAnim;
-				
-			}
-			break;
-
-		case 2:
-			if (currentAnimation != &rightAnim)
-			{
-				rightAnim.Reset();
-				rightfootAnim.Reset();
-				currentAnimation = &rightAnim;
-				
-			}
-			break;
-
-		case 3:
-			if (currentAnimation != &rightdownAnim)
-			{
-				rightdownAnim.Reset();
-				rightdownfootAnim.Reset();
-				currentAnimation = &rightdownAnim;
-				
-			}
-			break;
-
-		case 4:
-			if (currentAnimation != &downAnim)
-			{
-				downAnim.Reset();
-				downfootAnim.Reset();
-				currentAnimation = &downAnim;
-				
-			}
-			break;
-
-		case 5:
-			if (currentAnimation != &leftdownAnim)
-			{
-				leftdownAnim.Reset();
-				leftdownfootAnim.Reset();
-				currentAnimation = &leftdownAnim;
-				
-			}
-			break;
-
-		case 6:
-			if (currentAnimation != &leftAnim)
-			{
-				leftAnim.Reset();
-				leftfootAnim.Reset();
-				currentAnimation = &leftAnim;
-				
-			}
-			break;
-
-		case 7:
-			if (currentAnimation != &leftupAnim)
-			{
-				leftupAnim.Reset();
-				leftupfootAnim.Reset();
-				currentAnimation = &leftupAnim;
-				
-			}
-			break;
-		}
-	}
-
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT && immovable == false
-		|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) > 0 && immovable == false)
-	{
-		position.y += speed;
-	
-		switch (facing)
-		{
-		case 0:
-			if (currentAnimation != &upAnim)
-			{
-				upAnim.Reset();
-				upfootAnim.Reset();
-				currentAnimation = &upAnim;
-				
-			}
-			break;
-
-		case 1:
-			if (currentAnimation != &rightupAnim)
-			{
-				rightupAnim.Reset();
-				rightupfootAnim.Reset();
-				currentAnimation = &rightupAnim;
-				
-			}
-			break;
-
-		case 2:
-			if (currentAnimation != &rightAnim)
-			{
-				rightAnim.Reset();
-				rightfootAnim.Reset();
-				currentAnimation = &rightAnim;
-				
-			}
-			break;
-
-		case 3:
-			if (currentAnimation != &rightdownAnim)
-			{
-				rightdownAnim.Reset();
-				rightdownfootAnim.Reset();
-				currentAnimation = &rightdownAnim;
-				
-			}
-			break;
-
-		case 4:
-			if (currentAnimation != &downAnim)
-			{
-				downAnim.Reset();
-				downfootAnim.Reset();
-				currentAnimation = &downAnim;
-				
-			}
-			break;
-
-		case 5:
-			if (currentAnimation != &leftdownAnim)
-			{
-				leftdownAnim.Reset();
-				leftdownfootAnim.Reset();
-				currentAnimation = &leftdownAnim;
-				
-			}
-			break;
-
-		case 6:
-			if (currentAnimation != &leftAnim)
-			{
-				leftAnim.Reset();
-				leftfootAnim.Reset();
-				currentAnimation = &leftAnim;
-				
-			}
-			break;
-
-		case 7:
-			if (currentAnimation != &leftupAnim)
-			{
-				leftupAnim.Reset();
-				leftupfootAnim.Reset();
-				currentAnimation = &leftupAnim;
-				
-			}
-			break;
-		}
-	}
-
-	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT && immovable == false
-		|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) < 0 && immovable == false)
-	{
-		position.y -= speed;
-
-		switch (facing)
-		{
-		case 0:
-			if (currentAnimation != &upAnim)
-			{
-				upAnim.Reset();
-				upfootAnim.Reset();
-				currentAnimation = &upAnim;
-				
-			}
-			break;
-
-		case 1:
-			if (currentAnimation != &rightupAnim)
-			{
-				rightupAnim.Reset();
-				rightupfootAnim.Reset();
-				currentAnimation = &rightupAnim;
-				
-			}
-			break;
-
-		case 2:
-			if (currentAnimation != &rightAnim)
-			{
-				rightAnim.Reset();
-				rightfootAnim.Reset();
-				currentAnimation = &rightAnim;
-				
-			}
-			break;
-
-		case 3:
-			if (currentAnimation != &rightdownAnim)
-			{
-				rightdownAnim.Reset();
-				rightdownfootAnim.Reset();
-				currentAnimation = &rightdownAnim;
-				
-			}
-			break;
-
-		case 4:
-			if (currentAnimation != &downAnim)
-			{
-				downAnim.Reset();
-				downfootAnim.Reset();
-				currentAnimation = &downAnim;
-				
-			}
-			break;
-
-		case 5:
-			if (currentAnimation != &leftdownAnim)
-			{
-				leftdownAnim.Reset();
-				leftdownfootAnim.Reset();
-				currentAnimation = &leftdownAnim;
-				
-			}
-			break;
-
-		case 6:
-			if (currentAnimation != &leftAnim)
-			{
-				leftAnim.Reset();
-				leftfootAnim.Reset();
-				currentAnimation = &leftAnim;
-				
-			}
-			break;
-
-		case 7:
-			if (currentAnimation != &leftupAnim)
-			{
-				leftupAnim.Reset();
-				leftupfootAnim.Reset();
-				currentAnimation = &leftupAnim;
-				
-			}
-			break;
 		}
 
-	}
+		if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT && immovable == false
+			|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) > 0 && immovable == false)
+		{
+			position.y += speed;
+			facing = 3;
+		}
 
-	// Interactuar
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)
-	{
-		
-	}
+		if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT && immovable == false
+			|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) < 0 && immovable == false)
+		{
+			position.y -= speed;
+			facing = 1;
+		}
+
+		// Interactuar
+		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)
+		{
+
+		}
 
 
-	// If no up/down movement detected, set the current animation back to idle
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
-		&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
-		&& App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
-		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
-		&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) == 0
-		&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) == 0)
-	{
-		currentAnimation = &idleupAnim;
-		
+		// If no up/down movement detected, set the current animation back to idle
+		if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
+			&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
+			&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) == 0
+			&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) == 0)
+		{
+			//Comprobación de la ultima dirección en la que ha mirado
+			switch (facing)
+			{
+			case 1:
+				currentAnimation = &idledownAnim;
+				break;
+
+			case 2:
+				currentAnimation = &idledownAnim;
+				break;
+
+			case 3:
+				currentAnimation = &idledownAnim;
+				break;
+
+			case 4:
+				currentAnimation = &idledownAnim;
+				break;
+			}
+
+
+		}
 	}
 
 	//Idle del espacio
@@ -614,25 +302,25 @@ Update_Status ModulePlayer::Update()
 	return Update_Status::UPDATE_CONTINUE;
 	
 }
+
 Update_Status ModulePlayer::PostUpdate()
 {
-	if (!destroyed)
-	{
-		SDL_Rect rect;
-		SDL_Rect rect2;
+	
+	SDL_Rect rect;
+	SDL_Rect rect2;
 
-		currentAnimation = &upAnim;
-		rect = currentAnimation->GetCurrentFrame();
+	currentAnimation = &upAnim;
+	rect = currentAnimation->GetCurrentFrame();
 		
 
-		App->render->Blit(texture, position.x, position.y + 30, &rect2);
-		App->render->Blit(texture, position.x, position.y, &rect);
+	App->render->Blit(texture, position.x, position.y + 30, &rect2);
+	App->render->Blit(texture, position.x, position.y, &rect);
 	
 
-		//UI
-		App->render->Blit(App->UI->uiTexture, App->render->GetCameraCenterX() - 100, App->render->GetCameraCenterY() - 110, NULL, 1.0, false);
-		App->render->Blit(App->UI->limites, App->render->GetCameraCenterX()-450, App->render->GetCameraCenterY()-200, NULL, 1.0, false);
-	}
+	//UI
+	App->render->Blit(App->UI->uiTexture, App->render->GetCameraCenterX() - 100, App->render->GetCameraCenterY() - 110, NULL, 1.0, false);
+	App->render->Blit(App->UI->limites, App->render->GetCameraCenterX()-450, App->render->GetCameraCenterY()-200, NULL, 1.0, false);
+	
 
 	// Draw UI (score) --------------------------------------
 	sprintf_s(demoText, 10, "%5d", variable);
