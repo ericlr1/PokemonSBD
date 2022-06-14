@@ -1,0 +1,1 @@
+Tamaño sprites player: 21 x 28

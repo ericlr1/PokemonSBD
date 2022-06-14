@@ -29,6 +29,15 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
 	//Animaciones start
 
+	upAnim.PushBack({21, 0, 21, 28});
+	upAnim.PushBack({0, 0, 21, 28});
+	upAnim.PushBack({21, 0, 21, 28});
+	upAnim.PushBack({42, 0, 21, 28});
+
+	upAnim.speed = 0.05f;
+	upAnim.loop = true;
+
+
 }
 
 ModulePlayer::~ModulePlayer()
@@ -44,6 +53,7 @@ bool ModulePlayer::Start()
 	
 	//Load the textures
 	App->UI->iconoVida = App->textures->Load("Assets/Sprites/UI _Vidas.png"); //Icono vida
+	texture = App->textures->Load("Assets/Sprites/Sprites male (Faltan cuadrar algunos).png"); //Icono vida
 
 
 	// Initiate player audios here
