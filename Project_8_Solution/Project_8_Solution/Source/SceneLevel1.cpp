@@ -454,11 +454,13 @@ bool SceneLevel1::Start()
 	//App->collisions->AddCollider({ 760, 403, 3, 40 }, Collider::Type::RESET_ANIM_TRENCH);
 	
 	//Colliders
-	App->collisions->AddCollider({0, 0, 30, 30}, Collider::Type::WALL);
+	App->collisions->AddCollider({0, 0, 30, 300}, Collider::Type::WALL);
 	App->collisions->AddCollider({0, 300, 125, 100}, Collider::Type::WALL);
 	App->collisions->AddCollider({305, 355, 10, 40}, Collider::Type::WALL);
 	App->collisions->AddCollider({315, 345, 120, 50}, Collider::Type::WALL);
 	App->collisions->AddCollider({183, 382, 124, 16}, Collider::Type::WALL);
+
+	
 
 
 
