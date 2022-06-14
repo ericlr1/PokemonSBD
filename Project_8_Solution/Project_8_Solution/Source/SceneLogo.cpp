@@ -9,6 +9,7 @@
 #include "ModuleFonts.h"
 #include "SceneIntro.h" 
 #include "ModulePlayer.h"
+#include "SceneLevel1.h"
 
 
 SceneLogo::SceneLogo(bool startEnabled) : Module(startEnabled)
@@ -44,9 +45,11 @@ Update_Status SceneLogo::Update()
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || button_press)
 	{
+		
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
 		App->player->position.x = 200;
 		App->player->position.y = 200;
+		
 
 
 	}
