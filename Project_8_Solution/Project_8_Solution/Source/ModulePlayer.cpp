@@ -110,8 +110,6 @@ bool ModulePlayer::Start()
 
 
 	//Player position
-	position.x = 200;
-	position.y = 200;
 	collider = App->collisions->AddCollider({ 0,0, 20,20 }, Collider::Type::BODY, this);
 	collider_foot = App->collisions->AddCollider({ 0,0, 20, 10}, Collider::Type::FOOT, this);
 	collider_camara =App->collisions->AddCollider({0,0, 485, 16 }, Collider::Type::WALL);
@@ -389,6 +387,15 @@ Update_Status ModulePlayer::PostUpdate()
 			App->fonts->BlitText(10, 180, pokemonFont, "PRESS.T.FOR.SHORTCUTS");
 		}
 
+		if (immovable == false)
+		{
+			App->fonts->BlitText(10, 10, pokemonFont, "FALSE");
+		}
+		else
+		{
+			App->fonts->BlitText(10, 10, pokemonFont, "TRUE");
+		}
+
 		if (shortcuts == true)
 		{
 			App->fonts->BlitText(10, 180, pokemonFont, "F8.TACKLER");		//Green Soilder 2
@@ -513,8 +520,16 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	{
 		immovable = true;
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneRuta1, 30);
-		position.x = 200;
-		position.y = 610;
+		App->player->position.x = 200;
+		App->player->position.y = 610;
+	}
+
+	if (c1->type == Collider::Type::FOOT && c2->type == Collider::Type::TOPALLETTOWN)
+	{
+		immovable = true;
+		App->fade->FadeToBlack((Module*)App->sceneRuta1, (Module*)App->sceneLevel_1, 30);
+		App->player->position.x = 200;
+		App->player->position.y = 35;
 	}
 	
 }

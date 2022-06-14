@@ -518,6 +518,29 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::TORUTA1][Collider::Type::RESPAWN_5] = false;
 	matrix[Collider::Type::TORUTA1][Collider::Type::TORUTA1] = false;
 
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::WALL] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::BODY] = true;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::FOOT] = true;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::ENEMY] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::PLAYER_SHOT] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::ENEMY_SHOT] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::WATER] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::TRENCH] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::HOSTAGE] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RALIGUN] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RALIGUN_SHOOT] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::EXPLOSION] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::DESTRUIBLE] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RESET_ANIM_TRENCH] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RESET_ANIM_WATER] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::WIN] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RESPAWN_1] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RESPAWN_2] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RESPAWN_3] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RESPAWN_4] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::RESPAWN_5] = false;
+	matrix[Collider::Type::TOPALLETTOWN][Collider::Type::TOPALLETTOWN] = false;
+
 }
 
 // Destructor

@@ -21,7 +21,8 @@
 
 SceneRuta1::SceneRuta1(bool startEnabled) : Module(startEnabled)
 {
-
+	
+	
 }
 
 SceneRuta1::~SceneRuta1()
@@ -50,6 +51,8 @@ bool SceneRuta1::Start()
 
 	App->player->immovable = false;
 
+	App->collisions->AddCollider({ 190, 632, 35, 10 }, Collider::Type::TOPALLETTOWN);
+
 
 	return ret;
 }
@@ -74,15 +77,7 @@ Update_Status SceneRuta1::PostUpdate()
 
 bool SceneRuta1::CleanUp()
 {
-	App->player->Disable();
-	App->enemies->Disable();
-	App->destruibles->Disable();
-	App->collisions->Disable();
-	App->fonts->Disable();
-	App->particles->Disable();
-	App->textures->Disable();
-
-
+	
 
 	return true;
 }

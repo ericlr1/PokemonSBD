@@ -36,6 +36,8 @@ bool SceneLevel1::Start()
 
 	bool ret = true;
 
+	App->player->immovable = false;
+
 	App->player->Enable();
 	App->enemies->Enable();
 	App->destruibles->Enable();
