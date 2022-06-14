@@ -92,19 +92,7 @@ Update_Status SceneLose::PostUpdate()
 	App->render->camera.y = 0;
 
 	//Win animation
-	if (App->player->lives > 0)
-	{
-		App->audio->PlayMusic("Assets/Fx/127.ogg");
-		App->render->Blit(App->UI->limites, App->render->GetCameraCenterX() - 450, App->render->GetCameraCenterY() - 200, NULL, 1.0, false);
-		App->render->Blit(win1, 0, 0, &fondo);
-		App->render->Blit(spritesAnimacion, 0, 0, &(winAnimation.GetCurrentFrame())); // Win animation
-	}
-	else
-	{
-		//Lose animation (GAME OVER)
-		App->render->Blit(bgTexture, 0, 0, &fondo);
-		//App->fonts->BlitText(80, 100, LoseFont, "GAME.OVER");
-	}
+	
 
 	
 	

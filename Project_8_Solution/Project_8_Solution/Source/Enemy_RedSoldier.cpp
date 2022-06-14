@@ -141,7 +141,6 @@ void Enemy_RedSoldier::OnCollision(Collider* collider)
 	if (collider->type == Collider::Type::PLAYER_SHOT || collider->type == Collider::Type::EXPLOSION || collider->type == Collider::Type::RALIGUN_SHOOT)
 	{
 		currentAnim = &death;
-		App->player->score += 100;
 		App->particles->AddParticle(App->particles->RedSoilderDeath, position.x, position.y, Collider::Type::NONE);
 		App->audio->PlayFx(enemyDeadFx);
 	}
