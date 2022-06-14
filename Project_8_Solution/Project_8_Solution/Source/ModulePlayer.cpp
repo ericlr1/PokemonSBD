@@ -64,9 +64,20 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	rightAnim.PushBack({ 42, 84, 21, 28 });
 	rightAnim.speed = 0.07f;
 	rightAnim.loop = true;
-	idlerightAnim.PushBack({ 21, 28, 21, 28 });
+	idlerightAnim.PushBack({ 21, 84, 21, 28 });
 	idlerightAnim.speed = 0.05f;
 	idlerightAnim.loop = true;
+
+
+	upAnim.PushBack({ 21, 56, 21, 28 });
+	upAnim.PushBack({ 0, 56, 21, 28 });
+	upAnim.PushBack({ 21, 56, 21, 28 });
+	upAnim.PushBack({ 42, 56, 21, 28 });
+	upAnim.speed = 0.07f;
+	upAnim.loop = true;
+	idleupAnim.PushBack({ 21, 56, 21, 28 });
+	idleupAnim.speed = 0.05f;
+	idleupAnim.loop = true;
 
 
 }
@@ -293,19 +304,19 @@ Update_Status ModulePlayer::Update()
 		switch (facing)
 		{
 		case 1:
-			currentAnimation = &upAnim;
+			currentAnimation = &idleupAnim;
 			break;
 						
 		case 2:
-			currentAnimation = &rightAnim;
+			currentAnimation = &idlerightAnim;
 			break;
 
 		case 3:
-			currentAnimation = &downAnim;
+			currentAnimation = &idledownAnim;
 			break;
 
 		case 4:
-			currentAnimation = &leftAnim;
+			currentAnimation = &idleleftAnim;
 			break;
 		}
 
