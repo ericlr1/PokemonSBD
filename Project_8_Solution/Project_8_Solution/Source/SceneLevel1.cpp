@@ -459,6 +459,9 @@ bool SceneLevel1::Start()
 	App->collisions->AddCollider({305, 355, 10, 40}, Collider::Type::WALL);
 	App->collisions->AddCollider({315, 345, 120, 50}, Collider::Type::WALL);
 	App->collisions->AddCollider({183, 382, 124, 16}, Collider::Type::WALL);
+	App->collisions->AddCollider({ 251, 182, 44,83 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ 314, 182, 46,83 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ 295, 182, 19,66 }, Collider::Type::WALL);
 
 	
 
