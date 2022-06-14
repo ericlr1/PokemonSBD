@@ -47,7 +47,7 @@ bool SceneLevel1::Start()
 
 	bgTexture = App->textures->Load("Assets/Sprites/pueblo paleta.png");
 	destructibles = App->textures->Load("Assets/Sprites/Destruibles.png");
-	App->audio->PlayMusic("Assets/Fx/106.ogg", 1.0f); // bgm Farm
+	App->audio->PlayMusic("Assets/Fx/pallet_town_theme.ogg", 1.0f); // bgm Farm
 
 
 	//App->enemies->AddEnemy(Enemy_Type::GREENSOLDIER, 280, 2920);
@@ -454,9 +454,11 @@ bool SceneLevel1::Start()
 	//App->collisions->AddCollider({ 760, 403, 3, 40 }, Collider::Type::RESET_ANIM_TRENCH);
 	
 	//Colliders
-	App->collisions->AddCollider({0, 0, 27, 300}, Collider::Type::WALL);
+	App->collisions->AddCollider({0, 0, 30, 30}, Collider::Type::WALL);
 	App->collisions->AddCollider({0, 300, 125, 100}, Collider::Type::WALL);
-	App->collisions->AddCollider({312, 350, 120, 50}, Collider::Type::WALL);
+	App->collisions->AddCollider({305, 355, 10, 40}, Collider::Type::WALL);
+	App->collisions->AddCollider({315, 345, 120, 50}, Collider::Type::WALL);
+	App->collisions->AddCollider({183, 382, 124, 16}, Collider::Type::WALL);
 
 
 
