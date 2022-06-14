@@ -112,8 +112,8 @@ bool ModulePlayer::Start()
 	//Player position
 	position.x = 200;
 	position.y = 200;
-	collider = App->collisions->AddCollider({ 0,0, 15,30 }, Collider::Type::BODY, this);
-	collider_foot = App->collisions->AddCollider({ 0,0,12,11 }, Collider::Type::FOOT, this);
+	collider = App->collisions->AddCollider({ 0,0, 20,20 }, Collider::Type::BODY, this);
+	collider_foot = App->collisions->AddCollider({ 0,0, 20, 10}, Collider::Type::FOOT, this);
 	collider_camara =App->collisions->AddCollider({0,0, 485, 16 }, Collider::Type::WALL);
 	return ret;
 }
@@ -330,8 +330,8 @@ Update_Status ModulePlayer::Update()
 		
 	}
 	
-	collider->SetPos(position.x+8, position.y+17);
-	collider_foot->SetPos(position.x + 10, position.y + 45);
+	collider->SetPos(position.x, position.y);
+	collider_foot->SetPos(position.x, position.y + 12);
 	collider_camara->SetPos(App->render->GetCameraCenterX()-100, App->render->GetCameraCenterY() +160);
 
 
