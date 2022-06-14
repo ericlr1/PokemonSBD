@@ -38,6 +38,11 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	upAnim.loop = true;
 
 
+	idleupAnim.PushBack({ 21, 0, 21, 28 });
+	idleupAnim.speed = 0.05f;
+	idleupAnim.loop = true;
+
+
 }
 
 ModulePlayer::~ModulePlayer()
@@ -586,7 +591,7 @@ Update_Status ModulePlayer::Update()
 		&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) == 0
 		&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) == 0)
 	{
-		
+		currentAnimation = &idleupAnim;
 		
 	}
 
