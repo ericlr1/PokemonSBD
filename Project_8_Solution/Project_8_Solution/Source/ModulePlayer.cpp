@@ -29,10 +29,10 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
 	//Animaciones start
 
-	downAnim.PushBack({21, 0, 21, 28});
-	downAnim.PushBack({0, 0, 21, 28});
-	downAnim.PushBack({21, 0, 21, 28});
-	downAnim.PushBack({42, 0, 21, 28});
+	downAnim.PushBack({ 21, 0, 21, 28 });
+	downAnim.PushBack({ 0, 0, 21, 28 });
+	downAnim.PushBack({ 21, 0, 21, 28 });
+	downAnim.PushBack({ 42, 0, 21, 28 });
 
 	downAnim.speed = 0.07f;
 	downAnim.loop = true;
@@ -43,7 +43,34 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	idledownAnim.loop = true;
 
 
+	leftAnim.PushBack({21, 28, 21, 28});
+	leftAnim.PushBack({0 , 28, 21, 28 });
+	leftAnim.PushBack({21 , 28, 21, 28 });
+	leftAnim.PushBack({42 , 28, 21, 28 });
+
+
+	leftAnim.speed = 0.07f;
+	leftAnim.loop = true;
+
+	idleleftAnim.PushBack({ 21, 28, 21, 28 });
+	idleleftAnim.speed = 0.05f;
+	idleleftAnim.loop = true;
+
+
+
+	rightAnim.PushBack({ 21, 84, 21, 28 });
+	rightAnim.PushBack({ 0, 84, 21, 28 });
+	rightAnim.PushBack({ 21, 84, 21, 28 });
+	rightAnim.PushBack({ 42, 84, 21, 28 });
+	rightAnim.speed = 0.07f;
+	rightAnim.loop = true;
+	idlerightAnim.PushBack({ 21, 28, 21, 28 });
+	idlerightAnim.speed = 0.05f;
+	idlerightAnim.loop = true;
+
+
 }
+
 
 ModulePlayer::~ModulePlayer()
 {
