@@ -83,6 +83,8 @@ bool ModulePlayer::Start()
 
 	bool ret = true;
 	
+	currentAnimation = &idleupAnim;
+
 	//Load the textures
 	App->UI->iconoVida = App->textures->Load("Assets/Sprites/UI _Vidas.png"); //Icono vida
 	texture = App->textures->Load("Assets/Sprites/Sprites male.png"); //Icono vida
@@ -246,69 +248,70 @@ Update_Status ModulePlayer::Update()
 	{
 		position.x -= speed;
 		facing = 4;
-
-
-
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && immovable == false
-			|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) > 0 && immovable == false)
-		{
-			position.x += speed;
-			facing = 2;
-
-		}
-
-		if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT && immovable == false
-			|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) > 0 && immovable == false)
-		{
-			position.y += speed;
-			facing = 3;
-		}
-
-		if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT && immovable == false
-			|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) < 0 && immovable == false)
-		{
-			position.y -= speed;
-			facing = 1;
-		}
-
-		// Interactuar
-		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)
-		{
-
-		}
-
-
-		// If no up/down movement detected, set the current animation back to idle
-		if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
-			&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
-			&& App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
-			&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
-			&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) == 0
-			&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) == 0)
-		{
-			//Comprobación de la ultima dirección en la que ha mirado
-			switch (facing)
-			{
-			case 1:
-				currentAnimation = &idledownAnim;
-				break;
-
-			case 2:
-				currentAnimation = &idledownAnim;
-				break;
-
-			case 3:
-				currentAnimation = &idledownAnim;
-				break;
-
-			case 4:
-				currentAnimation = &idledownAnim;
-				break;
-			}
-
-
-		}
+		currentAnimation = &leftAnim;
 	}
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && immovable == false
+		|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) > 0 && immovable == false)
+	{
+		position.x += speed;
+		facing = 2;
+		currentAnimation = &rightAnim;
+	}
+
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT && immovable == false
+		|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) > 0 && immovable == false)
+	{
+		position.y += speed;
+		facing = 3;
+		currentAnimation = &downAnim;
+	}
+
+	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT && immovable == false
+		|| reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) < 0 && immovable == false)
+	{
+		position.y -= speed;
+		facing = 1;
+		currentAnimation = &upAnim;
+	}
+
+	// Interactuar
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)
+	{
+
+	}
+
+
+	// If no up/down movement detected, set the current animation back to idle
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_IDLE
+		&& App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_IDLE
+		&& App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
+		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE
+		&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_x, 10000, 2) == 0
+		&& reduce_val(SDL_IsGameController(0), App->input->controllers[0].j1_y, 10000, 2) == 0)
+	{
+		//Comprobación de la ultima dirección en la que ha mirado
+		switch (facing)
+		{
+		case 1:
+			currentAnimation = &upAnim;
+			break;
+						
+		case 2:
+			currentAnimation = &rightAnim;
+			break;
+
+		case 3:
+			currentAnimation = &downAnim;
+			break;
+
+		case 4:
+			currentAnimation = &leftAnim;
+			break;
+		}
+
+
+	}
+
 
 	//Idle del espacio
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_IDLE || button_press)
@@ -336,7 +339,6 @@ Update_Status ModulePlayer::PostUpdate()
 	SDL_Rect rect;
 	SDL_Rect rect2;
 
-	currentAnimation = &upAnim;
 	rect = currentAnimation->GetCurrentFrame();
 		
 
