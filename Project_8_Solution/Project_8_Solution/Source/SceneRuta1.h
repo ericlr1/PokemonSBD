@@ -36,6 +36,11 @@ public:
 
 	// The scene sprite sheet loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
+	SDL_Texture* pokeball = nullptr;
+
+	//Colliders con nombre
+	Collider* colliderpokeballW = nullptr;
+	Collider* colliderpokeballR = nullptr;
 
 };
 
