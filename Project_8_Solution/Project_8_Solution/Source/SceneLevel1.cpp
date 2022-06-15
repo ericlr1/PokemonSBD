@@ -470,7 +470,7 @@ bool SceneLevel1::Start()
 	App->collisions->AddCollider({ 295, 182, 19,66 }, Collider::Type::WALL);
 	App->collisions->AddCollider({ 246, 316, 50,20 }, Collider::Type::WALL);
 	App->collisions->AddCollider({ 296,308-2, 20,22 }, Collider::Type::WALL);
-	App->collisions->AddCollider({ 316,317, 47,19 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ 316,317, 47,16 }, Collider::Type::WALL);
 	App->collisions->AddCollider({ 398,0, 32,345 }, Collider::Type::WALL);
 	App->collisions->AddCollider({ 240,0, 158,47 }, Collider::Type::WALL);
 	App->collisions->AddCollider({ 30,0, 158,46 }, Collider::Type::WALL);
