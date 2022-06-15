@@ -47,11 +47,14 @@ bool SceneRuta1::Start()
 	App->textures->Enable();
 
 	bgTexture = App->textures->Load("Assets/Sprites/Ruta1.png");
+	pokeball = App->textures->Load("Assets/Sprites/pokeball.png");
 	App->audio->PlayMusic("Assets/Fx/pallet_town_theme.ogg", 1.0f); // bgm ruta 1
 
 	App->player->immovable = false;
 
 	App->collisions->AddCollider({ 190, 632, 35, 10 }, Collider::Type::TOPALLETTOWN);
+	colliderpokeballR = App->collisions->AddCollider({ 70, 120, 20, 20 }, Collider::Type::RECOLLECTABLE);
+	colliderpokeballW = App->collisions->AddCollider({ 75, 125, 10, 10 }, Collider::Type::WALL);
 
 
 	return ret;
@@ -69,6 +72,7 @@ Update_Status SceneRuta1::PostUpdate()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
+	App->render->Blit(pokeball, 75, 125, NULL);
 
 	//App->render->Blit(destructibles, 163, 113, false);
 

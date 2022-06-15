@@ -33,6 +33,7 @@ struct Collider
 		RESPAWN_5,
 		TORUTA1,
 		TOPALLETTOWN,
+		RECOLLECTABLE,
 		
 	
 

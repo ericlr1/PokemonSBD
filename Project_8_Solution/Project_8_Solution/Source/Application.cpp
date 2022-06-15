@@ -38,13 +38,14 @@ Application::Application()
 
 	modules[5] =	sceneIntro =	new SceneIntro(false);
 	modules[6] =	sceneLevel_1 =	new SceneLevel1(false);
-	modules[7] =	collisions =	new ModuleCollisions(true);//Gameplay scene starts disabled
-	modules[8] =	destruibles =	new ModuleDestruibles(true);
-	modules[9] =	sceneLose =		new SceneLose(false);
-	modules[10] =	sceneLogo =		new SceneLogo(true);
-	modules[11] =	scenePrevTitle =new ScenePrevTitle(false);
-	modules[12] =	sceneRuta1 =	new SceneRuta1(false);
-	modules[13] =   enemies =       new ModuleEnemies(false);	//Player starts disabled
+	modules[7] =	destruibles =	new ModuleDestruibles(true);
+	modules[8] =	sceneLose =		new SceneLose(false);
+	modules[9] =	sceneLogo =		new SceneLogo(true);
+	modules[10] =	scenePrevTitle =new ScenePrevTitle(false);
+	modules[11] =	sceneRuta1 =	new SceneRuta1(false);
+	modules[12] =   enemies =       new ModuleEnemies(false);	//Player starts disabled
+
+	modules[13] = collisions = new ModuleCollisions(true);//Gameplay scene starts disabled
 	
 	modules[14] =	particles =		new ModuleParticles(true);
 

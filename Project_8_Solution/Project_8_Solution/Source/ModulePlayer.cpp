@@ -17,6 +17,7 @@
 #include "ModuleUI.h"
 #include "ModuleEnemies.h"
 #include "ModuleDestruibles.h"
+#include "SceneRuta1.h"
 
 
 #include "SDL/include/SDL_scancode.h"
@@ -286,6 +287,12 @@ Update_Status ModulePlayer::Update()
 	// Interactuar
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)
 	{
+		
+	}
+
+	//Immovable a false
+	if (App->input->keys[SDL_SCANCODE_I] == Key_State::KEY_DOWN)
+	{
 		immovable = !immovable;
 	}
 
@@ -366,13 +373,13 @@ Update_Status ModulePlayer::PostUpdate()
 
 	//Blit the text of UI
 
-	App->fonts->BlitText((SCREEN_WIDTH / 2) + 110, (SCREEN_HEIGHT / 2) - 140, pokemonFont, "HI");
-	App->fonts->BlitText((SCREEN_WIDTH / 2) + 150, (SCREEN_HEIGHT / 2 - 140), pokemonFont, "30000");
-	App->fonts->BlitText((SCREEN_WIDTH / 2) + 70, (SCREEN_HEIGHT / 2) - 125, pokemonFont, "1..UP");
+	App->fonts->BlitText((SCREEN_WIDTH / 2) + 110, (SCREEN_HEIGHT / 2) - 140, pokemonFont, "DEMO");
 
 
 	if (App->collisions->debug == true)
 	{
+		App->fonts->BlitText(10, 20, pokemonFont, demoText);
+
 		if (godMode == true)
 		{
 			App->fonts->BlitText(10, 300, pokemonFont, "GODMODE.ON");
@@ -382,11 +389,6 @@ Update_Status ModulePlayer::PostUpdate()
 			App->fonts->BlitText(10, 300, pokemonFont, "GODMODE.OFF");
 		}
 
-		if (shortcuts == false)
-		{
-			App->fonts->BlitText(10, 180, pokemonFont, "PRESS.T.FOR.SHORTCUTS");
-		}
-
 		if (immovable == false)
 		{
 			App->fonts->BlitText(10, 10, pokemonFont, "FALSE");
@@ -394,19 +396,6 @@ Update_Status ModulePlayer::PostUpdate()
 		else
 		{
 			App->fonts->BlitText(10, 10, pokemonFont, "TRUE");
-		}
-
-		if (shortcuts == true)
-		{
-			App->fonts->BlitText(10, 180, pokemonFont, "F8.TACKLER");		//Green Soilder 2
-			App->fonts->BlitText(10, 190, pokemonFont, "F10.TRIPLESHOT");
-			App->fonts->BlitText(10, 200, pokemonFont, "F11.RED.SOILDER");
-			App->fonts->BlitText(10, 210, pokemonFont, "F9.GREEN.SOILDER");
-			App->fonts->BlitText(10, 220, pokemonFont, "H.HOSTAGE");
-			App->fonts->BlitText(10, 230, pokemonFont, "G.GRENADER");
-			App->fonts->BlitText(10, 240, pokemonFont, "B.REGULAR.BARICADE");
-			App->fonts->BlitText(10, 250, pokemonFont, "N.ROTATED.BARICADE");
-			App->fonts->BlitText(10, 260, pokemonFont, "M.SPIKES");
 		}
 
 
@@ -530,6 +519,21 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		App->fade->FadeToBlack((Module*)App->sceneRuta1, (Module*)App->sceneLevel_1, 30);
 		App->player->position.x = 200;
 		App->player->position.y = 35;
+	}
+
+	//Control de recolectables
+	if (c1->type == Collider::Type::FOOT && c2->type == Collider::Type::RECOLLECTABLE && App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	{
+		
+		//Pokeball ruta1
+		if (c2 = App->sceneRuta1->colliderpokeballR)
+		{
+			//FAlta hacer desaparecer el sprite
+			App->sceneRuta1->colliderpokeballR->pendingToDelete = true;
+			App->sceneRuta1->colliderpokeballW->pendingToDelete = true;
+			variable++;
+		}
+
 	}
 	
 }

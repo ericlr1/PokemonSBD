@@ -127,7 +127,6 @@
     <ClInclude Include="ModuleDestruibles.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h" />
     <ClInclude Include="Destruible.h">
       <Filter>Source Files\Entities\Destruibles</Filter>
     </ClInclude>
@@ -151,6 +150,9 @@
     </ClInclude>
     <ClInclude Include="ScenePrevTitle.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

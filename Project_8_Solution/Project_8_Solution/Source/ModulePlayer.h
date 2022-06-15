@@ -111,7 +111,7 @@ public:
 	//Destroyed variable
 	bool destroyed = false;
 
-	int variable = 3;
+	int variable = 0;
 };
 
 #endif //!__MODULE_PLAYER_H_
