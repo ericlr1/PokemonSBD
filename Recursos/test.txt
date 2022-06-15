@@ -1,1 +1,2 @@
 Tamaño sprites player: 21 x 28
+Tamaño letras: 11x13

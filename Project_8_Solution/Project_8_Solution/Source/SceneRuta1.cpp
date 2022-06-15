@@ -53,8 +53,12 @@ bool SceneRuta1::Start()
 	App->player->immovable = false;
 
 	App->collisions->AddCollider({ 190, 632, 35, 10 }, Collider::Type::TOPALLETTOWN);
-	colliderpokeballR = App->collisions->AddCollider({ 70, 120, 20, 20 }, Collider::Type::RECOLLECTABLE);
-	colliderpokeballW = App->collisions->AddCollider({ 75, 125, 10, 10 }, Collider::Type::WALL);
+	if (pokeballruta1 == false)
+	{
+		colliderpokeballR = App->collisions->AddCollider({ 70, 120, 20, 20 }, Collider::Type::RECOLLECTABLE);
+		colliderpokeballW = App->collisions->AddCollider({ 75, 125, 10, 10 }, Collider::Type::WALL);
+	}
+	
 
 
 	return ret;
@@ -72,8 +76,12 @@ Update_Status SceneRuta1::PostUpdate()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
-	App->render->Blit(pokeball, 75, 125, NULL);
-
+	
+	if (pokeballruta1 == false)
+	{
+		App->render->Blit(pokeball, 75, 125, NULL);
+	}
+	
 	//App->render->Blit(destructibles, 163, 113, false);
 
 	return Update_Status::UPDATE_CONTINUE;

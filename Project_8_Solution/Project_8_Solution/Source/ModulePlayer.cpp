@@ -106,8 +106,8 @@ bool ModulePlayer::Start()
 	weaponPickUpFx = App->audio->LoadFx("Assets/Fx/165.wav");
 
 	//Load font
-	char lookupTable[] = { "0123456789ABCDEFGHIJKLMNOPQRSTUV."};
-	pokemonFont = App->fonts->Load("Assets/Sprites/fonts.png", lookupTable, 2);
+	char lookupTable[] = {"ABCDEFGHIJ,.abcdefghijKLMNOPQRSTU'-klmnopqrstUVWXYZ____¡¿uvwxyz____0123456789:;_?!_______"};
+	pokemonFont = App->fonts->Load("Assets/Sprites/fuentes_letras.png", lookupTable, 4);
 
 
 	//Player position
@@ -531,6 +531,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			//FAlta hacer desaparecer el sprite
 			App->sceneRuta1->colliderpokeballR->pendingToDelete = true;
 			App->sceneRuta1->colliderpokeballW->pendingToDelete = true;
+			App->sceneRuta1->pokeballruta1 = true;
+			//Dar item
 			variable++;
 		}
 

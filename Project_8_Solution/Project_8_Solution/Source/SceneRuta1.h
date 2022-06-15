@@ -33,6 +33,9 @@ public:
 	bool CleanUp();
 
 public:
+	//Bool que controla si ya has pillado la pokeball 
+	bool pokeballruta1 = false;
+
 
 	// The scene sprite sheet loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
