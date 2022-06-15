@@ -286,7 +286,7 @@ Update_Status ModulePlayer::Update()
 	// Interactuar
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)
 	{
-
+		immovable = !immovable;
 	}
 
 
@@ -521,7 +521,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		immovable = true;
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneRuta1, 30);
 		App->player->position.x = 200;
-		App->player->position.y = 610;
+		App->player->position.y = 620;
 	}
 
 	if (c1->type == Collider::Type::FOOT && c2->type == Collider::Type::TOPALLETTOWN)
