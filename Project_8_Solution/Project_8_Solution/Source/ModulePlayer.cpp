@@ -100,6 +100,7 @@ bool ModulePlayer::Start()
 	//Load the textures
 	App->UI->iconoVida = App->textures->Load("Assets/Sprites/UI _Vidas.png"); //Icono vida
 	texture = App->textures->Load("Assets/Sprites/Sprites male.png"); //Icono vida
+	text_box = App->textures->Load("Assets/Sprites/caja de texto.png"); //Icono vida
 
 
 	// Initiate player audios here
@@ -113,7 +114,7 @@ bool ModulePlayer::Start()
 	//Player position
 	collider = App->collisions->AddCollider({ 0,0, 20,20 }, Collider::Type::BODY, this);
 	collider_foot = App->collisions->AddCollider({ 0,0, 20, 10}, Collider::Type::FOOT, this);
-	collider_camara =App->collisions->AddCollider({0,0, 485, 16 }, Collider::Type::WALL);
+	collider_camara =App->collisions->AddCollider({0,0, 485, 16 }, Collider::Type::NONE);
 	return ret;
 }
 
@@ -166,6 +167,11 @@ Update_Status ModulePlayer::Update()
 		return Update_Status::UPDATE_STOP;
 	}
 
+	if (App->input->keys[SDL_SCANCODE_B] == Key_State::KEY_DOWN)
+	{
+		text_on_screen = !text_on_screen;
+	}
+	
 	//Auto win
 	if (App->input->keys[SDL_SCANCODE_K] == Key_State::KEY_DOWN)
 	{
@@ -357,6 +363,11 @@ Update_Status ModulePlayer::PostUpdate()
 
 	rect = currentAnimation->GetCurrentFrame();
 		
+	if (text_on_screen == true)
+	{
+		App->render->Blit(text_box, App->render->GetCameraCenterX() - 120, App->render->GetCameraCenterY() + 110);
+	}
+
 
 	App->render->Blit(texture, position.x, position.y + 30, &rect2);
 	App->render->Blit(texture, position.x, position.y, &rect);

@@ -49,6 +49,7 @@ public:
 
 	// The player spritesheet loaded into an SDL_Texture
 	SDL_Texture* texture = nullptr;
+	SDL_Texture* text_box = nullptr;
 	
 	// The pointer to the current player animation
 	// It will be switched depending on the player's movement direction
@@ -110,6 +111,9 @@ public:
 
 	//Destroyed variable
 	bool destroyed = false;
+
+	//In conversation/text variable
+	bool text_on_screen = false;
 
 	int variable = 0;
 };
