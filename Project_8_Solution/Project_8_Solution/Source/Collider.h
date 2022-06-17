@@ -34,6 +34,7 @@ struct Collider
 		TORUTA1,
 		TOPALLETTOWN,
 		RECOLLECTABLE,
+		SIGN,
 		
 	
 

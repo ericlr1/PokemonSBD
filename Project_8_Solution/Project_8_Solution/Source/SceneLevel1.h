@@ -49,19 +49,17 @@ public:
 	SDL_Texture* destructibles = nullptr;
 
 
-	Collider* raligun_colldier = nullptr;
+	Collider* collider_cartel_madera = nullptr;
+	Collider* collider_cartel_metal = nullptr;
 	
 	// Bools to check if the music has changed
 	bool isLevelMusic = false;
 	bool isContinueMusic = false;
 
 
-	//Respawns camera
-	bool spawn_1 = false;
-	bool spawn_2 = false;
-	bool spawn_3 = false;
-	bool spawn_4 = false;
-	bool spawn_5 = false;
+	// Bools de los dos carteles
+	bool cartel_madera = false;
+	bool cartel_metal = false;
 
 	
 
