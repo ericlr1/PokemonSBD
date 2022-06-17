@@ -106,7 +106,7 @@ bool ModulePlayer::Start()
 	weaponPickUpFx = App->audio->LoadFx("Assets/Fx/165.wav");
 
 	//Load font
-	char lookupTable[] = {"ABCDEFGHIJ,.abcdefghijKLMNOPQRSTU'-klmnopqrstUVWXYZ____¡¿uvwxyz____0123456789:;_?!_______"};
+	char lookupTable[] = {"ABCDEFGHIJ,.abcdefghijKLMNOPQRSTU'-klmnopqrstUVWXYZ____¡¿uvwxyz___0123456789:;_?!_______"};
 	pokemonFont = App->fonts->Load("Assets/Sprites/fuentes_letras.png", lookupTable, 4);
 
 
@@ -374,7 +374,7 @@ Update_Status ModulePlayer::PostUpdate()
 	//Blit the text of UI
 
 	App->fonts->BlitText((SCREEN_WIDTH / 2) + 110, (SCREEN_HEIGHT / 2) - 140, pokemonFont, "DEMO");
-
+	App->fonts->BlitText(5, 50, pokemonFont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?!¡¿");
 
 	if (App->collisions->debug == true)
 	{
