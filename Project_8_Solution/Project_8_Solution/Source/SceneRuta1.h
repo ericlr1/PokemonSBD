@@ -45,6 +45,13 @@ public:
 	Collider* colliderpokeballW = nullptr;
 	Collider* colliderpokeballR = nullptr;
 
+
+
+	
+
 };
+
+
+
 
 #endif
