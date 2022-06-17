@@ -293,7 +293,12 @@ Update_Status ModulePlayer::Update()
 	// Interactuar
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)
 	{
-		
+		if (App->sceneLevel_1->cartel_metal == true)
+		{
+			immovable = false;
+			text_on_screen = false;
+			App->sceneLevel_1->cartel_metal = false;
+		}
 	}
 
 	//Immovable a false
@@ -434,6 +439,7 @@ Update_Status ModulePlayer::PostUpdate()
 		App->player->text_on_screen = true;
 		App->fonts->BlitText((SCREEN_WIDTH / 2) + 110, (SCREEN_HEIGHT / 2) + 150, App->player->pokemonFont, "PUEBLO PALETA");
 		App->player->immovable = true;
+		waiting_to_skip_text = true;
 
 	}
 
@@ -564,7 +570,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		if (c2 = App->sceneLevel_1->collider_cartel_metal)
 		{
 			App->sceneLevel_1->cartel_metal = true;
-			//position.y += 5;
 		}
 	}
 	
