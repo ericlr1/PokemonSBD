@@ -564,7 +564,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		if (c2 = App->sceneLevel_1->collider_cartel_metal)
 		{
 			App->sceneLevel_1->cartel_metal = true;
-			position.y += 5;
+			//position.y += 5;
 		}
 	}
 	
