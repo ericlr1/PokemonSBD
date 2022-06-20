@@ -406,11 +406,11 @@ Update_Status ModulePlayer::PostUpdate()
 
 		if (immovable == false)
 		{
-			App->fonts->BlitText(10, 10, pokemonFont, "Inmovable: FALSE");
+			App->fonts->BlitText(10, 10, pokemonFont, "Immovable: FALSE");
 		}
 		else
 		{
-			App->fonts->BlitText(10, 10, pokemonFont, "Inmovable: TRUE");
+			App->fonts->BlitText(10, 10, pokemonFont, "Immovable: TRUE");
 		}
 
 
@@ -435,9 +435,10 @@ Update_Status ModulePlayer::PostUpdate()
 	
 	if (App->sceneLevel_1->cartel_metal == true)
 	{
-		
+		App->player->text_on_screen = true;
 		App->fonts->BlitText((SCREEN_WIDTH / 2) + 110, (SCREEN_HEIGHT / 2) + 150, App->player->pokemonFont, "PUEBLO PALETA");
-		
+		App->player->immovable = true;
+		waiting_to_skip_text = true;
 
 	}
 
@@ -566,17 +567,9 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if ((c1->type == Collider::Type::FOOT) && (c2->type == Collider::Type::SIGN) && (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN 
 		|| App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN))
 	{
-		App->player->immovable = true;
-		App->player->text_on_screen = true;
-
 		if (c2 = App->sceneLevel_1->collider_cartel_metal)
 		{
 			App->sceneLevel_1->cartel_metal = true;
-		}
-
-		if (c2 = App->sceneLevel_1->collider_cartel_madera)
-		{
-			App->sceneLevel_1->cartel_madera = true;
 		}
 	}
 	
