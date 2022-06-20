@@ -459,6 +459,9 @@ bool SceneLevel1::Start()
 	//Collider salida a Ruta 1
 	App->collisions->AddCollider({ 187, 0, 57, 10 }, Collider::Type::TORUTA1);
 
+	//Colliders carteles
+	collider_cartel_metal = App->collisions->AddCollider({ 296, 325, 17, 15}, Collider::Type::SIGN);
+
 	//Colliders muros
 	App->collisions->AddCollider({0, 0, 30, 294}, Collider::Type::WALL);
 	App->collisions->AddCollider({0, 294, 118, 105}, Collider::Type::WALL); //arboles de abajo
@@ -514,8 +517,7 @@ Update_Status SceneLevel1::PostUpdate()
 {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
-
-	//App->render->Blit(destructibles, 163, 113, false);
+	
 	
 	return Update_Status::UPDATE_CONTINUE;
 }

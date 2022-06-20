@@ -564,6 +564,29 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled)
 	matrix[Collider::Type::RECOLLECTABLE][Collider::Type::RESPAWN_5] = false;
 	matrix[Collider::Type::RECOLLECTABLE][Collider::Type::RECOLLECTABLE] = false;
 
+	matrix[Collider::Type::SIGN][Collider::Type::WALL] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::BODY] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::FOOT] = true;
+	matrix[Collider::Type::SIGN][Collider::Type::ENEMY] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::PLAYER_SHOT] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::ENEMY_SHOT] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::WATER] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::TRENCH] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::HOSTAGE] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RALIGUN] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RALIGUN_SHOOT] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::EXPLOSION] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::DESTRUIBLE] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RESET_ANIM_TRENCH] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RESET_ANIM_WATER] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::WIN] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RESPAWN_1] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RESPAWN_2] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RESPAWN_3] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RESPAWN_4] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::RESPAWN_5] = false;
+	matrix[Collider::Type::SIGN][Collider::Type::SIGN] = false;
+
 }
 
 // Destructor
@@ -741,6 +764,10 @@ void ModuleCollisions::DebugDraw()
 			break;
 
 			case Collider::Type::RECOLLECTABLE:
+			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha);
+			break;
+
+			case Collider::Type::SIGN:
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha);
 			break;
 		}

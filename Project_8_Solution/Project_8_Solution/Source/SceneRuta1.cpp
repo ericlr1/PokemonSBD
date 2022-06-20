@@ -99,7 +99,7 @@ Update_Status SceneRuta1::PostUpdate()
 		App->render->Blit(pokeball, 75, 125, NULL);
 	}
 	
-	//App->render->Blit(destructibles, 163, 113, false);
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 }

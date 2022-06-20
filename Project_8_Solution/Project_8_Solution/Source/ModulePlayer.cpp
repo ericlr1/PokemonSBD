@@ -293,7 +293,12 @@ Update_Status ModulePlayer::Update()
 	// Interactuar
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)
 	{
-		
+		if (App->sceneLevel_1->cartel_metal == true)
+		{
+			immovable = false;
+			text_on_screen = false;
+			App->sceneLevel_1->cartel_metal = false;
+		}
 	}
 
 	//Immovable a false
@@ -366,6 +371,7 @@ Update_Status ModulePlayer::PostUpdate()
 	if (text_on_screen == true)
 	{
 		App->render->Blit(text_box, App->render->GetCameraCenterX() - 120, App->render->GetCameraCenterY() + 110);
+		text_on_screen = false;
 	}
 
 
@@ -428,6 +434,15 @@ Update_Status ModulePlayer::PostUpdate()
 		
 	}
 	
+	if (App->sceneLevel_1->cartel_metal == true)
+	{
+		App->player->text_on_screen = true;
+		App->fonts->BlitText((SCREEN_WIDTH / 2) + 110, (SCREEN_HEIGHT / 2) + 150, App->player->pokemonFont, "PUEBLO PALETA");
+		App->player->immovable = true;
+		waiting_to_skip_text = true;
+
+	}
+
 
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -532,7 +547,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	}
 
 	//Control de recolectables
-	if (c1->type == Collider::Type::FOOT && c2->type == Collider::Type::RECOLLECTABLE && App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	if ((c1->type == Collider::Type::FOOT) && (c2->type == Collider::Type::RECOLLECTABLE) && ((App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN 
+		|| App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN)))
 	{
 		
 		//Pokeball ruta1
@@ -546,6 +562,15 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 			variable++;
 		}
 
+	}
+
+	if ((c1->type == Collider::Type::FOOT) && (c2->type == Collider::Type::SIGN) && (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN 
+		|| App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN))
+	{
+		if (c2 = App->sceneLevel_1->collider_cartel_metal)
+		{
+			App->sceneLevel_1->cartel_metal = true;
+		}
 	}
 	
 }
@@ -589,6 +614,7 @@ void ModulePlayer::CameraFollowPlayer()
 	App->render->SetCameraCenter(camerax, cameray);
 	
 }
+
 
 
 bool ModulePlayer::CleanUp() {

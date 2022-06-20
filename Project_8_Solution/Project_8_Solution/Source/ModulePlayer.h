@@ -114,6 +114,8 @@ public:
 
 	//In conversation/text variable
 	bool text_on_screen = false;
+	bool waiting_to_skip_text = false;
+
 
 	int variable = 0;
 };
