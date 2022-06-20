@@ -30,9 +30,9 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 {
 	//Animaciones start
 
-	downAnim.PushBack({ 21, 0, 21, 28 });
+	downAnim.PushBack({ 20, 0, 22, 28 });
 	downAnim.PushBack({ 0, 0, 21, 28 });
-	downAnim.PushBack({ 21, 0, 21, 28 });
+	downAnim.PushBack({ 20, 0, 22, 28 });
 	downAnim.PushBack({ 42, 0, 21, 28 });
 
 	downAnim.speed = 0.07f;
@@ -447,7 +447,7 @@ Update_Status ModulePlayer::PostUpdate()
 	if (App->sceneLevel_1->cartel_madera == true)
 	{
 		App->player->text_on_screen = true;
-		App->fonts->BlitText((SCREEN_WIDTH / 2) + 50, (SCREEN_HEIGHT / 2) + 135, App->player->pokemonFont, "PISTAS PARA NUEVOS ENTRENADORES");
+		App->fonts->BlitText((SCREEN_WIDTH / 2) + 50, (SCREEN_HEIGHT / 2) + 135, App->player->pokemonFont, "TIPS PARA NUEVOS ENTRENADORES");
 		App->fonts->BlitText((SCREEN_WIDTH / 2) + 50, (SCREEN_HEIGHT / 2) + 150, App->player->pokemonFont, "-Utiliza W,A,S,D para moverte");
 		App->fonts->BlitText((SCREEN_WIDTH / 2) + 50, (SCREEN_HEIGHT / 2) + 165, App->player->pokemonFont, "-Utiliza SPACE para interactuar");
 		App->player->immovable = true;
