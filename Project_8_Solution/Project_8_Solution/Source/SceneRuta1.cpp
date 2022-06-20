@@ -59,10 +59,10 @@ bool SceneRuta1::Start()
 		colliderpokeballW = App->collisions->AddCollider({ 75, 125, 10, 10 }, Collider::Type::WALL);
 	}
 	//colliders de la ruta
-	App->collisions->AddCollider({ 159, 226, 98, 47 }, Collider::Type::WALL); //arboles medio parte media fila derecha
-	App->collisions->AddCollider({ 33, 227, 32, 49 }, Collider::Type::WALL); //arboles medio partea media arbol solitario
+	App->collisions->AddCollider({ 159-2, 226, 98, 47 }, Collider::Type::WALL); //arboles medio parte media fila derecha
+	App->collisions->AddCollider({ 33-2, 227, 32, 49 }, Collider::Type::WALL); //arboles medio partea media arbol solitario
 	App->collisions->AddCollider({ 128, 51, 32, 145 }, Collider::Type::WALL); //arboles medio arriba
-	App->collisions->AddCollider({ 32, 386, 160, 46 }, Collider::Type::WALL); //arboles medio abajo izquierda
+	App->collisions->AddCollider({ 32-2, 386, 160, 46 }, Collider::Type::WALL); //arboles medio abajo izquierda
 	App->collisions->AddCollider({ 0, 32, 32, 586 }, Collider::Type::WALL); //arboles izquierda
 	App->collisions->AddCollider({ 353, 32, 31, 586 }, Collider::Type::WALL); //arboles derecha
 	App->collisions->AddCollider({ 32, 577, 160, 41 }, Collider::Type::WALL); //valla abajo izquierda
