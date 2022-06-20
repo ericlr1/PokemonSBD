@@ -460,7 +460,8 @@ bool SceneLevel1::Start()
 	App->collisions->AddCollider({ 187, 0, 57, 10 }, Collider::Type::TORUTA1);
 
 	//Colliders carteles
-	collider_cartel_metal = App->collisions->AddCollider({ 296, 325, 17, 15}, Collider::Type::SIGN);
+	collider_cartel_metal = App->collisions->AddCollider({ 296, 325, 17, 10}, Collider::Type::SIGN);
+	collider_cartel_madera = App->collisions->AddCollider({ 153, 219, 16, 10}, Collider::Type::SIGN);
 
 	//Colliders muros
 	App->collisions->AddCollider({0, 0, 30, 294}, Collider::Type::WALL);

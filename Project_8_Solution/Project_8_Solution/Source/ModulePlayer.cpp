@@ -298,6 +298,7 @@ Update_Status ModulePlayer::Update()
 			immovable = false;
 			text_on_screen = false;
 			App->sceneLevel_1->cartel_metal = false;
+			App->sceneLevel_1->cartel_madera = false;
 		}
 	}
 
@@ -433,10 +434,22 @@ Update_Status ModulePlayer::PostUpdate()
 		
 	}
 	
+	//Carteles
 	if (App->sceneLevel_1->cartel_metal == true)
 	{
 		App->player->text_on_screen = true;
 		App->fonts->BlitText((SCREEN_WIDTH / 2) + 110, (SCREEN_HEIGHT / 2) + 150, App->player->pokemonFont, "PUEBLO PALETA");
+		App->player->immovable = true;
+		waiting_to_skip_text = true;
+
+	}
+
+	if (App->sceneLevel_1->cartel_madera == true)
+	{
+		App->player->text_on_screen = true;
+		App->fonts->BlitText((SCREEN_WIDTH / 2) + 50, (SCREEN_HEIGHT / 2) + 135, App->player->pokemonFont, "PISTAS PARA NUEVOS ENTRENADORES");
+		App->fonts->BlitText((SCREEN_WIDTH / 2) + 50, (SCREEN_HEIGHT / 2) + 150, App->player->pokemonFont, "-Utiliza W,A,S,D para moverte");
+		App->fonts->BlitText((SCREEN_WIDTH / 2) + 50, (SCREEN_HEIGHT / 2) + 165, App->player->pokemonFont, "-Utiliza SPACE para interactuar");
 		App->player->immovable = true;
 		waiting_to_skip_text = true;
 
@@ -567,9 +580,14 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if ((c1->type == Collider::Type::FOOT) && (c2->type == Collider::Type::SIGN) && (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN 
 		|| App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_B] == Key_State::KEY_DOWN))
 	{
-		if (c2 = App->sceneLevel_1->collider_cartel_metal)
+		if (c2 == App->sceneLevel_1->collider_cartel_metal)
 		{
 			App->sceneLevel_1->cartel_metal = true;
+		}
+
+		if (c2 == App->sceneLevel_1->collider_cartel_madera)
+		{
+			App->sceneLevel_1->cartel_madera = true;
 		}
 	}
 	
