@@ -107,6 +107,13 @@ Update_Status SceneRuta1::PostUpdate()
 bool SceneRuta1::CleanUp()
 {
 	
+	App->player->Disable();
+	App->enemies->Disable();
+	App->destruibles->Disable();
+	App->collisions->Disable();
+	App->fonts->Disable();
+	App->particles->Disable();
+	App->textures->Disable();
 
 	return true;
 }
