@@ -46,7 +46,7 @@ bool SceneRuta1::Start()
 	App->particles->Enable();
 	App->textures->Enable();
 
-	bgTexture = App->textures->Load("Assets/Sprites/Ruta1.png");
+	bgTexture = App->textures->Load("Assets/Sprites/ruta1.png");
 	pokeball = App->textures->Load("Assets/Sprites/pokeball.png");
 	App->audio->PlayMusic("Assets/Fx/pallet_town_theme.ogg", 1.0f); // bgm ruta 1
 

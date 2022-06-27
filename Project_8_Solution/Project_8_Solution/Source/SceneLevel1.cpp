@@ -525,6 +525,7 @@ Update_Status SceneLevel1::PostUpdate()
 
 bool SceneLevel1::CleanUp()
 {
+	App->textures->Unload(bgTexture);
 	App->player->Disable();
 	App->enemies->Disable();
 	App->destruibles->Disable();
