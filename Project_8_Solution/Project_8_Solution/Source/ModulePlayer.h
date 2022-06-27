@@ -88,6 +88,7 @@ public:
 	// Font score index
 	int pokemonFont = -1;
 	char demoText[10] = { "\0" };	
+	char nick[10] = { "\0" };	
 	char attack[10] = { "\0" };	
 	char defense[10] = { "\0" };
 	char health[10] = { "\0" };

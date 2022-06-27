@@ -403,6 +403,7 @@ Update_Status ModulePlayer::PostUpdate()
 	//Set de las variables
 	sprintf_s(demoText, 10, "%5d", variable);
 	//Variables del pokemon en el inventario
+	sprintf_s(nick, 10, "%c", App->pokemonInv->nickname);
 	sprintf_s(health, 10, "%5d", App->pokemonInv->health);
 	sprintf_s(attack, 10, "%5d", App->pokemonInv->attack);
 	sprintf_s(defense, 10, "%5d", App->pokemonInv->defense);
@@ -420,10 +421,12 @@ Update_Status ModulePlayer::PostUpdate()
 		if (App->pokemonInv->NumOfPokemons > 0)
 		{
 			//Printar valores
-			App->fonts->BlitText(10, 55, pokemonFont, health);
-			App->fonts->BlitText(10, 70, pokemonFont, attack);
-			App->fonts->BlitText(10, 85, pokemonFont, defense);
-			App->fonts->BlitText(10, 100, pokemonFont, specAtk);
+			App->fonts->BlitText(10, 55, pokemonFont, nick);
+			App->fonts->BlitText(10, 70, pokemonFont, health);
+			App->fonts->BlitText(45, 70, pokemonFont, "HP");
+			App->fonts->BlitText(10, 85, pokemonFont, attack);
+			App->fonts->BlitText(10, 100, pokemonFont, defense);
+			App->fonts->BlitText(10, 115, pokemonFont, specAtk);
 			App->fonts->BlitText(10, 115, pokemonFont, specDef);
 		}
 	}

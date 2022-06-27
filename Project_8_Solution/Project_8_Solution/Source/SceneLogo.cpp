@@ -30,6 +30,8 @@ bool SceneLogo::Start()
 	bool ret = true;
 
 	bgTexture = App->textures->Load("Assets/Sprites/capybara.png");
+	introFX = App->audio->LoadFx("Assets/Fx/Ok_I_pull_up.wav");
+	App->audio->PlayFx(introFX);
 
 	return ret;
 }
