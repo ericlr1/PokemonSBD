@@ -19,6 +19,7 @@
 #include "ModuleDestruibles.h"
 #include "SceneRuta1.h"
 #include "Module.h"
+#include "ModulePokemonInv.h"
 
 
 #include "SDL/include/SDL_scancode.h"
@@ -205,9 +206,17 @@ Update_Status ModulePlayer::Update()
 		godMode = !godMode;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_T] == Key_State::KEY_DOWN)
+	//Pokemon inv
+	if (App->input->keys[SDL_SCANCODE_E] == Key_State::KEY_DOWN)		
 	{
-		shortcuts = !shortcuts;
+		inventario = !inventario;
+	}
+
+	//Add one pokemon
+	if (App->input->keys[SDL_SCANCODE_N] == Key_State::KEY_DOWN)
+	{
+		App->pokemonInv->NumOfPokemons++;
+		App->pokemonInv->setValues("Pokachu", "Pokachu Gordo", 80, 30, 20, 99, 100, 110, 5, 69, 6);
 	}
 
 	//Spawning enemies menu
@@ -391,12 +400,37 @@ Update_Status ModulePlayer::PostUpdate()
 	
 
 	// Draw UI (score) --------------------------------------
+	//Set de las variables
 	sprintf_s(demoText, 10, "%5d", variable);
-
+	//Variables del pokemon en el inventario
+	sprintf_s(health, 10, "%5d", App->pokemonInv->health);
+	sprintf_s(attack, 10, "%5d", App->pokemonInv->attack);
+	sprintf_s(defense, 10, "%5d", App->pokemonInv->defense);
+	sprintf_s(specAtk, 10, "%5d", App->pokemonInv->specAtk);
+	sprintf_s(specDef, 10, "%5d", App->pokemonInv->specDef);
 
 	//Blit the text of UI
 
 	App->fonts->BlitText((SCREEN_WIDTH / 2) + 110, (SCREEN_HEIGHT / 2) - 140, pokemonFont, "DEMO");
+
+	//Inventario
+	if (inventario == true)
+	{
+		App->fonts->BlitText(10, 40, pokemonFont, "Inventario:");
+		if (App->pokemonInv->NumOfPokemons > 0)
+		{
+			//Printar valores
+			App->fonts->BlitText(10, 55, pokemonFont, health);
+			App->fonts->BlitText(10, 70, pokemonFont, attack);
+			App->fonts->BlitText(10, 85, pokemonFont, defense);
+			App->fonts->BlitText(10, 100, pokemonFont, specAtk);
+			App->fonts->BlitText(10, 115, pokemonFont, specDef);
+		}
+	}
+	else
+	{
+
+	}
 
 	if (App->collisions->debug == true)
 	{
@@ -419,6 +453,8 @@ Update_Status ModulePlayer::PostUpdate()
 		{
 			App->fonts->BlitText(10, 10, pokemonFont, "Immovable: TRUE");
 		}
+
+		
 
 
 		//Camera movment

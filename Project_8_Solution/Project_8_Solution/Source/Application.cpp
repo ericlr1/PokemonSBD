@@ -20,6 +20,7 @@
 #include "ModuleDestruibles.h"
 #include "ScenePrevTitle.h"
 #include "SceneRuta1.h"
+#include "ModulePokemonInv.h"
 
 
 
@@ -43,18 +44,19 @@ Application::Application()
 	modules[9] =	sceneLogo =		new SceneLogo(true);
 	modules[10] =	scenePrevTitle =new ScenePrevTitle(false);
 	modules[11] =	sceneRuta1 =	new SceneRuta1(false);
-	modules[12] =   enemies =       new ModuleEnemies(false);	//Player starts disabled
+	modules[12] =   enemies =       new ModuleEnemies(false);	
+	modules[13] =	pokemonInv =	new ModulePokemonInv(false);
 
-	modules[13] = collisions = new ModuleCollisions(true);//Gameplay scene starts disabled
+	modules[14] = collisions =		new ModuleCollisions(true);//Gameplay scene starts disabled
 	
-	modules[14] =	particles =		new ModuleParticles(true);
+	modules[15] =	particles =		new ModuleParticles(true);
 
-	modules[15] =   player =        new ModulePlayer(false);
+	modules[16] =   player =        new ModulePlayer(false);
 	
-	modules[16] =	fade =			new ModuleFadeToBlack(true);
-	modules[17] =	fonts =			new ModuleFonts(true);
+	modules[17] =	fade =			new ModuleFadeToBlack(true);
+	modules[18] =	fonts =			new ModuleFonts(true);
 
-	modules[18] =	render =		new ModuleRender(true);
+	modules[19] =	render =		new ModuleRender(true);
 
 }
 

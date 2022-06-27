@@ -88,6 +88,11 @@ public:
 	// Font score index
 	int pokemonFont = -1;
 	char demoText[10] = { "\0" };	
+	char attack[10] = { "\0" };	
+	char defense[10] = { "\0" };
+	char health[10] = { "\0" };
+	char specAtk[10] = { "\0" };
+	char specDef[10] = { "\0" };
 
 	//God mode
 	bool godMode = false;
@@ -116,6 +121,8 @@ public:
 	bool text_on_screen = false;
 	bool waiting_to_skip_text = false;
 
+	//Invertario mostrado
+	bool inventario = false;
 
 	int variable = 0;
 };

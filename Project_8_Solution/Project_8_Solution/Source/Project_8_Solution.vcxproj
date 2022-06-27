@@ -96,6 +96,7 @@
     <ClInclude Include="ModuleFadeToBlack.h" />
     <ClInclude Include="ModuleFonts.h" />
     <ClInclude Include="ModuleParticles.h" />
+    <ClInclude Include="ModulePokemonInv.h" />
     <ClInclude Include="ModuleUI.h" />
     <ClInclude Include="ModuleDestruibles.h" />
     <ClInclude Include="SceneIntro.h" />
@@ -139,6 +140,7 @@
     <ClCompile Include="ModuleFadeToBlack.cpp" />
     <ClCompile Include="ModuleFonts.cpp" />
     <ClCompile Include="ModuleParticles.cpp" />
+    <ClCompile Include="ModulePokemonInv.cpp" />
     <ClCompile Include="ModuleUI.cpp" />
     <ClCompile Include="ModuleDestruibles.cpp" />
     <ClCompile Include="SceneIntro.cpp" />
