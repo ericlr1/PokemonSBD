@@ -83,6 +83,7 @@ bool SceneRuta1::Start()
 	App->collisions->AddCollider({43, 593, 248, 73}, Collider::Type::WALL); //Arboles izquierda medio primer tramo
 	App->collisions->AddCollider({43, 568, 50, 25}, Collider::Type::WALL); //Arboles izquierda medio primer tramo
 	App->collisions->AddCollider({91, 575, 15, 18}, Collider::Type::WALL); //Arboles izquierda medio primer tramo
+	App->collisions->AddCollider({ 420, 508, 42, 283 }, Collider::Type::WALL); //Arboles derecha
 
 
 	App->collisions->AddCollider({181, 724, 20, 8}, Collider::Type::WALL); //Cartelon
