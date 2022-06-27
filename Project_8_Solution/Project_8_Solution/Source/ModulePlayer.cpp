@@ -551,17 +551,17 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 	if (c1->type == Collider::Type::FOOT && c2->type == Collider::Type::TORUTA1)
 	{
 		immovable = true;
+		App->player->position.x = 225;
+		App->player->position.y = 850;
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneRuta1, 30);
-		App->player->position.x = 200;
-		App->player->position.y = 620;
 	}
 
 	if (c1->type == Collider::Type::FOOT && c2->type == Collider::Type::TOPALLETTOWN)
 	{
 		immovable = true;
-		App->fade->FadeToBlack((Module*)App->sceneRuta1, (Module*)App->sceneLevel_1, 30);
 		App->player->position.x = 200;
 		App->player->position.y = 35;
+		App->fade->FadeToBlack((Module*)App->sceneRuta1, (Module*)App->sceneLevel_1, 30);
 	}
 
 	//Control de recolectables

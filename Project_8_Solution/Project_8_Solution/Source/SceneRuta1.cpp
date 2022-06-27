@@ -54,12 +54,13 @@ bool SceneRuta1::Start()
 
 	App->player->immovable = false;
 
-	App->collisions->AddCollider({ 190, 632, 35, 10 }, Collider::Type::TOPALLETTOWN);
+	App->collisions->AddCollider({ 203, 870, 55, 10 }, Collider::Type::TOPALLETTOWN);
 	if (pokeballruta1 == false)
 	{
 		colliderpokeballR = App->collisions->AddCollider({ 70, 120, 20, 20 }, Collider::Type::RECOLLECTABLE);
 		colliderpokeballW = App->collisions->AddCollider({ 75, 125, 10, 10 }, Collider::Type::WALL);
 	}
+
 	//colliders de la ruta
 	//App->collisions->AddCollider({ 159-4, 226+2, 98, 47 }, Collider::Type::WALL); //arboles medio parte media fila derecha
 	//App->collisions->AddCollider({ 33-4, 227+2, 32, 49 }, Collider::Type::WALL); //arboles medio partea media arbol solitario
