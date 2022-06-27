@@ -18,6 +18,7 @@
 #include "ModuleEnemies.h"
 #include "ModuleDestruibles.h"
 #include "SceneRuta1.h"
+#include "Module.h"
 
 
 #include "SDL/include/SDL_scancode.h"
@@ -32,7 +33,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 
 	downAnim.PushBack({ 20, 0, 22, 28 });
 	downAnim.PushBack({ 0, 0, 21, 28 });
-	downAnim.PushBack({ 20, 3, 22, 28 });
+	downAnim.PushBack({ 20, 0, 22, 28 });
 	downAnim.PushBack({ 42, 0, 21, 28 });
 
 	downAnim.speed = 0.07f;
@@ -377,6 +378,11 @@ Update_Status ModulePlayer::PostUpdate()
 
 	App->render->Blit(texture, position.x, position.y + 30, &rect2);
 	App->render->Blit(texture, position.x, position.y, &rect);
+
+	if (App->sceneRuta1->IsEnabled() == true)
+	{
+		App->render->Blit(App->sceneRuta1->cartelon, 178, 704, NULL);
+	}
 	
 
 	//UI

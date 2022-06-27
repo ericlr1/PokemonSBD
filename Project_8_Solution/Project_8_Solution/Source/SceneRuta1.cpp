@@ -48,7 +48,9 @@ bool SceneRuta1::Start()
 
 	bgTexture = App->textures->Load("Assets/Sprites/ruta1.png");
 	pokeball = App->textures->Load("Assets/Sprites/pokeball.png");
-	App->audio->PlayMusic("Assets/Fx/pallet_town_theme.ogg", 1.0f); // bgm ruta 1
+	cartelon = App->textures->Load("Assets/Sprites/cartelon.png");
+
+	App->audio->PlayMusic("Assets/Fx/route_1_theme.ogg", 1.0f); //Musica ruta 1
 
 	App->player->immovable = false;
 
@@ -75,7 +77,15 @@ bool SceneRuta1::Start()
 	App->collisions->AddCollider({0, 788, 193, 87}, Collider::Type::WALL); //Arboles abajo izquierda
 	App->collisions->AddCollider({193, 802, 8, 78}, Collider::Type::WALL); //Arboles abajo izquierda-pasillo
 	App->collisions->AddCollider({268, 788, 193, 87}, Collider::Type::WALL); //Arboles abajo derecha
-	App->collisions->AddCollider({268-8, 802, 8, 78}, Collider::Type::WALL); //Arboles abajo derecha-pasillo
+	App->collisions->AddCollider({260, 802, 8, 78}, Collider::Type::WALL); //Arboles abajo derecha-pasillo
+	App->collisions->AddCollider({0, 502-7, 43, 293}, Collider::Type::WALL); //Arboles izquierda primer tramo
+	App->collisions->AddCollider({43, 593, 248, 73}, Collider::Type::WALL); //Arboles izquierda medio primer tramo
+	App->collisions->AddCollider({43, 568, 50, 25}, Collider::Type::WALL); //Arboles izquierda medio primer tramo
+	App->collisions->AddCollider({91, 575, 15, 18}, Collider::Type::WALL); //Arboles izquierda medio primer tramo
+
+
+	App->collisions->AddCollider({181, 724, 20, 8}, Collider::Type::WALL); //Cartelon
+
 
 
 
