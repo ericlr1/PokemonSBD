@@ -59,17 +59,23 @@ bool SceneRuta1::Start()
 		colliderpokeballW = App->collisions->AddCollider({ 75, 125, 10, 10 }, Collider::Type::WALL);
 	}
 	//colliders de la ruta
-	App->collisions->AddCollider({ 159-4, 226+2, 98, 47 }, Collider::Type::WALL); //arboles medio parte media fila derecha
-	App->collisions->AddCollider({ 33-4, 227+2, 32, 49 }, Collider::Type::WALL); //arboles medio partea media arbol solitario
-	App->collisions->AddCollider({ 128, 51, 32, 145 }, Collider::Type::WALL); //arboles medio arriba
-	App->collisions->AddCollider({ 32-4, 386+2, 160, 46 }, Collider::Type::WALL); //arboles medio abajo izquierda
-	App->collisions->AddCollider({ 0, 32, 32, 586 }, Collider::Type::WALL); //arboles izquierda
-	App->collisions->AddCollider({ 353, 32, 31, 586 }, Collider::Type::WALL); //arboles derecha
-	App->collisions->AddCollider({ 32, 577, 160, 41+14 }, Collider::Type::WALL); //valla abajo izquierda
-	App->collisions->AddCollider({ 224, 577, 130, 38+14 }, Collider::Type::WALL); //valla abajo derecha
+	//App->collisions->AddCollider({ 159-4, 226+2, 98, 47 }, Collider::Type::WALL); //arboles medio parte media fila derecha
+	//App->collisions->AddCollider({ 33-4, 227+2, 32, 49 }, Collider::Type::WALL); //arboles medio partea media arbol solitario
+	//App->collisions->AddCollider({ 128, 51, 32, 145 }, Collider::Type::WALL); //arboles medio arriba
+	//App->collisions->AddCollider({ 32-4, 386+2, 160, 46 }, Collider::Type::WALL); //arboles medio abajo izquierda
+	//App->collisions->AddCollider({ 0, 32, 32, 586 }, Collider::Type::WALL); //arboles izquierda
+	//App->collisions->AddCollider({ 353, 32, 31, 586 }, Collider::Type::WALL); //arboles derecha
+	//App->collisions->AddCollider({ 32, 577, 160, 41+14 }, Collider::Type::WALL); //valla abajo izquierda
+	//App->collisions->AddCollider({ 224, 577, 130, 38+14 }, Collider::Type::WALL); //valla abajo derecha
 
-	App->collisions->AddCollider({ 0, 0, 162, 32 }, Collider::Type::WALL); //arboles arriba izquierda
-	App->collisions->AddCollider({ 224, 0, 161, 32 }, Collider::Type::WALL); //arboles arriba derecha
+	//App->collisions->AddCollider({ 0, 0, 162, 32 }, Collider::Type::WALL); //arboles arriba izquierda
+	//App->collisions->AddCollider({ 224, 0, 161, 32 }, Collider::Type::WALL); //arboles arriba derecha
+
+	//Colliders post cambio de imagen
+	App->collisions->AddCollider({0, 788, 193, 87}, Collider::Type::WALL); //Arboles abajo izquierda
+	App->collisions->AddCollider({193, 802, 8, 78}, Collider::Type::WALL); //Arboles abajo izquierda-pasillo
+	App->collisions->AddCollider({268, 788, 193, 87}, Collider::Type::WALL); //Arboles abajo derecha
+	App->collisions->AddCollider({268-8, 802, 8, 78}, Collider::Type::WALL); //Arboles abajo derecha-pasillo
 
 
 

@@ -32,7 +32,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 
 	downAnim.PushBack({ 20, 0, 22, 28 });
 	downAnim.PushBack({ 0, 0, 21, 28 });
-	downAnim.PushBack({ 20, 0, 22, 28 });
+	downAnim.PushBack({ 20, 3, 22, 28 });
 	downAnim.PushBack({ 42, 0, 21, 28 });
 
 	downAnim.speed = 0.07f;
