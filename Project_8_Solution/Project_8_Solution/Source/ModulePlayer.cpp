@@ -201,6 +201,12 @@ Update_Status ModulePlayer::Update()
 		godMode = !godMode;
 	}
 
+	//To combat screen
+	if (App->input->keys[SDL_SCANCODE_C] == Key_State::KEY_DOWN)
+	{
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneCombate, 30);
+	}
+	
 	//Pokemon inv
 	if (App->input->keys[SDL_SCANCODE_E] == Key_State::KEY_DOWN)		
 	{

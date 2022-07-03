@@ -32,6 +32,15 @@ public:
 
 public:
 
+	// Variable that defines who's turn is
+	bool youtTurn = false;
+
+	// Variable al abrir el menu de ataques
+	bool menuAtaques = false;
+
+	// Variables al abrir la mochila
+	bool menuMochila = false;
+
 	// The scene sprite sheet loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
 

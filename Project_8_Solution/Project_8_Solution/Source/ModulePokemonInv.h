@@ -67,6 +67,10 @@ public:
     int level, xp;
     int iv;
 
+    const char* E_name;
+    const char* E_nickname;
+    int E_maxHealth, E_health, E_attack, E_defense, E_speed, E_specAtk, E_specDef;
+
 
 };
 
