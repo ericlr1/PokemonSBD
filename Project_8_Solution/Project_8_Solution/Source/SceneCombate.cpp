@@ -3,7 +3,7 @@
 #include "Application.h"
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
-#include "ModuleAudio.h"
+#include "ModuleAudio.h" 
 #include "ModuleCollisions.h"
 #include "ModulePlayer.h"
 #include "ModuleInput.h"
@@ -81,7 +81,7 @@ Update_Status SceneCombate::Update() {
 // Update: draw background
 Update_Status SceneCombate::PostUpdate()
 {
-	App->render->Blit(bgTexture, -120, 0, NULL);
+	App->render->Blit(bgTexture, -150, 3, NULL);
 
 
 
