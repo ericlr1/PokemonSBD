@@ -77,7 +77,7 @@ Update_Status ScenePrevTitle::Update() {
 	case 1:
 		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN ||
 			duration >= SCENE_DURATION || button_press) {
-			App->fade->FadeToBlack(this, (Module*)App->sceneIntro, 80);
+			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 80);
 		}
 		App->render->camera.y -= 4 * SCREEN_SIZE;
 		boat.y -= 4;

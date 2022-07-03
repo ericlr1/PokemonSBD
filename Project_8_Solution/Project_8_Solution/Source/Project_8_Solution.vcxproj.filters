@@ -97,7 +97,7 @@
     <ClInclude Include="SceneLevel1.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
-    <ClInclude Include="SceneIntro.h">
+    <ClInclude Include="SceneCombate.h">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClInclude>
     <ClInclude Include="ModuleFonts.h">
@@ -219,7 +219,7 @@
     <ClCompile Include="SceneLevel1.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClCompile>
-    <ClCompile Include="SceneIntro.cpp">
+    <ClCompile Include="SceneCombate.cpp">
       <Filter>Source Files\Modules\Gameplay</Filter>
     </ClCompile>
     <ClCompile Include="ModuleFonts.cpp">

@@ -186,11 +186,6 @@ Update_Status ModulePlayer::Update()
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneLose, 60);
 	}
 
-	//Auto win //Creo que está mal
-	if (App->input->keys[SDL_SCANCODE_L] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 100);
-	}
 
 	if (App->input->keys[SDL_SCANCODE_F2] == Key_State::KEY_DOWN || App->input->controllers[0].buttons[SDL_CONTROLLER_BUTTON_X] == Key_State::KEY_DOWN)
 	{
@@ -364,7 +359,8 @@ Update_Status ModulePlayer::Update()
 	//Posicion de los colliders conforme se mueve la camara
 	currentAnimation->Update();
 
-	CameraFollowPlayer();	
+	//CameraFollowPlayer();	
+	App->render->SetCameraCenter(position.x, position.y);
 
 	return Update_Status::UPDATE_CONTINUE;
 	
@@ -460,22 +456,22 @@ Update_Status ModulePlayer::PostUpdate()
 		
 
 
-		//Camera movment
+		////Camera movment
 
-		int camerax = App->render->GetCameraCenterX();
-		int cameray = App->render->GetCameraCenterY();
+		//int camerax = App->render->GetCameraCenterX();
+		//int cameray = App->render->GetCameraCenterY();
 
-		App->render->DrawQuad({ camerax, cameray }, { 10, 10 }, 255, 0, 0, 255);
+		//App->render->DrawQuad({ camerax, cameray }, { 10, 10 }, 255, 0, 0, 255);
 
-		int moveCameraUp = cameray - 35;
-		int moveCameraDown = cameray + 35;
-		int moveCameraRight = camerax + 35;
-		int moveCameraLeft = camerax - 35;
+		//int moveCameraUp = cameray - 35;
+		//int moveCameraDown = cameray + 35;
+		//int moveCameraRight = camerax + 35;
+		//int moveCameraLeft = camerax - 35;
 
-		App->render->DrawQuad({ camerax, moveCameraUp }, { 10, 5 }, 255, 255, 0, 255);
-		App->render->DrawQuad({ camerax, moveCameraDown }, { 10, 5 }, 255, 0, 255, 255);
-		App->render->DrawQuad({ moveCameraRight, cameray }, { 5, 10 }, 255, 255, 0, 255);
-		App->render->DrawQuad({ moveCameraLeft, cameray }, { 5, 10 }, 255, 0, 255, 255);
+		//App->render->DrawQuad({ camerax, moveCameraUp }, { 10, 5 }, 255, 255, 0, 255);
+		//App->render->DrawQuad({ camerax, moveCameraDown }, { 10, 5 }, 255, 0, 255, 255);
+		//App->render->DrawQuad({ moveCameraRight, cameray }, { 5, 10 }, 255, 255, 0, 255);
+		//App->render->DrawQuad({ moveCameraLeft, cameray }, { 5, 10 }, 255, 0, 255, 255);
 		
 	}
 	
@@ -643,7 +639,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 void ModulePlayer::CameraFollowPlayer()
 {
 	
-	int camerax = App->render->GetCameraCenterX();
+	/*int camerax = App->render->GetCameraCenterX();
 	int cameray = App->render->GetCameraCenterY();
 
 	int moveCameraUp = cameray - 35;
@@ -674,7 +670,7 @@ void ModulePlayer::CameraFollowPlayer()
 
 	}
 
-	App->render->SetCameraCenter(camerax, cameray);
+	App->render->SetCameraCenter(camerax, cameray);*/
 	
 }
 

@@ -6,7 +6,7 @@
 #include "ModuleTextures.h"
 #include "ModuleAudio.h"
 #include "ModulePlayer.h"
-#include "SceneIntro.h"
+#include "SceneCombate.h"
 #include "SceneLevel1.h"
 #include "ModuleParticles.h"
 #include "ModuleEnemies.h"
@@ -37,7 +37,7 @@ Application::Application()
 
 	modules[4] =	UI =			new ModuleUI(false);		//UI
 
-	modules[5] =	sceneIntro =	new SceneIntro(false);
+	modules[5] =	sceneCombate =	new SceneCombate(false);
 	modules[6] =	sceneLevel_1 =	new SceneLevel1(false);
 	modules[7] =	destruibles =	new ModuleDestruibles(true);
 	modules[8] =	sceneLose =		new SceneLose(false);

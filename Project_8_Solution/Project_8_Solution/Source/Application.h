@@ -11,7 +11,7 @@ class ModuleInput;
 class ModuleTextures;
 class ModuleAudio;
 class ModulePlayer;
-class SceneIntro;
+class SceneCombate;
 class SceneLevel1;
 class SceneLose;
 class SceneLogo;
@@ -63,7 +63,7 @@ public:
 
 	ModuleUI* UI = nullptr;
 
-	SceneIntro* sceneIntro = nullptr;
+	SceneCombate* sceneCombate = nullptr;
 	SceneLevel1* sceneLevel_1 = nullptr;
 	SceneLose* sceneLose = nullptr;
 	SceneLogo* sceneLogo = nullptr;

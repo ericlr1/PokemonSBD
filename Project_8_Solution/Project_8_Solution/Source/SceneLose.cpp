@@ -60,7 +60,7 @@ Update_Status SceneLose::Update()
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || button_press)
 	{
-		App->fade->FadeToBlack(this, (Module*)App->sceneIntro, 50);
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 50);
 
 
 	}

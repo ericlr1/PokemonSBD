@@ -99,7 +99,7 @@
     <ClInclude Include="ModulePokemonInv.h" />
     <ClInclude Include="ModuleUI.h" />
     <ClInclude Include="ModuleDestruibles.h" />
-    <ClInclude Include="SceneIntro.h" />
+    <ClInclude Include="SceneCombate.h" />
     <ClInclude Include="SceneLevel1.h" />
     <ClInclude Include="ModuleInput.h" />
     <ClInclude Include="ModulePlayer.h" />
@@ -143,7 +143,7 @@
     <ClCompile Include="ModulePokemonInv.cpp" />
     <ClCompile Include="ModuleUI.cpp" />
     <ClCompile Include="ModuleDestruibles.cpp" />
-    <ClCompile Include="SceneIntro.cpp" />
+    <ClCompile Include="SceneCombate.cpp" />
     <ClCompile Include="SceneLevel1.cpp" />
     <ClCompile Include="ModuleInput.cpp" />
     <ClCompile Include="ModulePlayer.cpp" />

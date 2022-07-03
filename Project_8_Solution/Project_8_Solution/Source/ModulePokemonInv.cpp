@@ -14,23 +14,7 @@
 //Pokemon
 ModulePokemonInv::ModulePokemonInv(bool startEnabled) : Module(startEnabled) 
 {
-	/*name = "Missing No.";
-	nickname = "Missing No.";
-	maxHealth = 10;
-	health = 10;
-	attack = 10;
-	defense = 10;
-	specDef = 10;
-	specAtk = 10;
-	level = 1;
-	xp = 0;
-	baseHealth = health;
-	baseAttack = attack;
-	baseDefense = defense;
-	baseSpecAtk = specAtk;
-	baseSpecDef = specDef;
-	srand(time(NULL));
-	iv = rand() % 16;*/
+	
 }
 
 void ModulePokemonInv::setValues(const char* name, const char* nickname, int health, int attack, int defense, int speed, int specAtk, int specDef, int level, int xp, int iv)

@@ -5,17 +5,15 @@
 #include "Animation.h"
 #include "p2Point.h"
 
-#define MAX_ASSETS_TITLE 13
-
 struct SDL_Texture;
 
-class SceneIntro : public Module {
+class SceneCombate : public Module {
 public:
 	// Constructor
-	SceneIntro(bool startEnabled);
+	SceneCombate(bool startEnabled);
 
 	// Destructor
-	~SceneIntro();
+	~SceneCombate();
 
 	// Called when the module is activated
 	// Loads the necessary textures for the map background
@@ -33,30 +31,10 @@ public:
 	bool CleanUp();
 
 public:
-	// Scene duration
-	uint duration;
 
 	// The scene sprite sheet loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
-	SDL_Texture* introAssets = nullptr;
 
-	// Textures & Animations
-	iPoint planes[3];
-	Animation planesAnim;
-
-	iPoint boat;
-	Animation boatAnim;
-
-	iPoint bombs[8];
-	Animation bombsAnim;
-
-	iPoint playerMini;
-	Animation playerMiniAnim;
-
-	iPoint* assetsPoint[MAX_ASSETS_TITLE];
-	Animation assetsAnim[MAX_ASSETS_TITLE];
-
-	uint bombFx = 0;
 };
 
 #endif // __MODULE_SCENETITLE_H__
